@@ -37,7 +37,7 @@
 
   <!--   ****************** Linking css and js file **************************-->
 
-  <link rel="preload stylesheet" href="./main.css" media="screen">
+  <link rel="preload stylesheet" href="./main.css" media="screen" priority>
   
   
   <!-- ************SEO optimization ****************-->
@@ -49,13 +49,15 @@
   <!-- ************** Passive events for better Performance ********************-->
   <script type="text/javascript" src="https://unpkg.com/default-passive-events"></script>
 
+  <!-- ************************* Preloading Images *****************************-->
+  <link rel="preload" as="image" href="./img/Product_Images/Von Vene Kansas.jpeg">
+  <link rel="preload" as="image" href="./img/Product_Images/Von Vene Fuente.jpeg">
 </head>
 
 <body>
-<div class="landingcontainer">
-    <div class="loungecontainer"> <!--Hero Image Container-->
-        <img class="loungeimage" id="loungeimage" src="./img/LoungeTop.webp" width="auto" height="auto" alt="Modern Interior Lounge Room | Von Vene product Images" loading="eager">
-    </div>   
+<div class="landingcontainer"> 
+
+  <div id="backgroundimage" ></div>
 
     <!-- *********************** Navigation Bar *****************************-->
     <nav> 
@@ -104,107 +106,50 @@
 
         </div>
     </nav>  
+
+    <div class="hamburger">
+      <img class = "hamburgerbutton" src="./Icons/hamburger.svg" width="auto" height="auto" loading="eager">
+    </div>
     <!-- *********************** Navigation Bar End *****************************-->
 
     <!-- ************************** Ripple Elements for products ************************-->
-    <div id="producthighlightcontainer">
+    <div  class="producthighlightcontainer">
 
-      <div class="product" id="product1">
-        <span id="circlecontainer">
-          <div class="circle1"></div>
-          <div class="circle2"></div>
-          <div class="circle3"></div>
-       </span>
-        <label id="productlabel">
-          <span id="triangle"></span>
-          <p>Von Vene Kansas</p>
-        </label>
+      <div class="productlabel">
+        
+        <img id="productimage" src="" width="auto" height="auto" loading="eager">
+        <img id="close" src="./Icons/Close.svg" width="auto" height="auto" loading="eager">
       </div>
 
-      <div class="product" id="product2">
-        <span id="circlecontainer">
-          <div class="circle1"></div>
-          <div class="circle2"></div>
-          <div class="circle3"></div>
-       </span>
-        <label id="productlabel">
-          <span id="triangle"></span>
-          <p>Von Vene Fuente</p>
-        </label>
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple1">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
       </div>
 
-      <div class="product" id="product3">
-        <span id="circlecontainer">
-          <div class="circle1"></div>
-          <div class="circle2"></div>
-          <div class="circle3"></div>
-       </span>
-        <label id="productlabel">
-          <span id="triangle"></span>
-          <p>Von Vene Laguna</p>
-        </label>
+    
+      
+
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple2">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
       </div>
 
-      <div class="product" id="product4">
-        <span id="circlecontainer">
-          <div class="circle1"></div>
-          <div class="circle2"></div>
-          <div class="circle3"></div>
-       </span>
-        <label id="productlabel">
-          <span id="triangle"></span>
-          <p>Von Vene Shirley</p>
-        </label>
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple3">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
       </div>
+      
 
-      <div class="product" id="product5">
-        <span id="circlecontainer">
-          <div class="circle1"></div>
-          <div class="circle2"></div>
-          <div class="circle3"></div>
-       </span>
-        <label id="productlabel">
-          <span id="triangle"></span>
-          <p>Von Vene Travel Bag</p>
-        </label>
-      </div>
-
-      <div class="product" id="product6">
-        <span id="circlecontainer">
-          <div class="circle1"></div>
-          <div class="circle2"></div>
-          <div class="circle3"></div>
-       </span>
-        <label id="productlabel">
-          <span id="triangle"></span>
-          <p>Von Vene Coffee Mug</p>
-        </label>
-      </div>
-
-      <div class="product" id="product7">
-        <span id="circlecontainer">
-          <div class="circle1"></div>
-          <div class="circle2"></div>
-          <div class="circle3"></div>
-       </span>
-        <label id="productlabel">
-          <span id="triangle"></span>
-          <p>Von Vene Blanket</p>
-        </label>
-      </div>
-
-      <div class="product" id="product8">
-        <span id="circlecontainer">
-          <div class="circle1"></div>
-          <div class="circle2"></div>
-          <div class="circle3"></div>
-       </span>
-        <label id="productlabel">
-          <span id="triangle"></span>
-          <p>Von Vene T-Shirt</p>
-        </label>
-      </div>
-
+      
     </div>
 
     <button class="prevroomcontainer">

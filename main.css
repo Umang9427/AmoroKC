@@ -39,30 +39,49 @@ body {
     shape-rendering: geometricPrecision;  
 }
 
+/*------------------------------------ Containers and Backgrounds ----------------------------------*/
+
 .landingcontainer{
-    position: fixed;
-    display: block;
-    height: 100%;
-    width: 100%;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
 }
 
-.loungecontainer{
-    z-index: -5;
+#backgroundimage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./img/Room_Images/169.webp");
+  background-size: cover;
+  background-position: center;
+  transition: all 0.4s ease-in-out;
 }
-.loungecontainer img{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: auto;
 
+@media (max-aspect-ratio: 16/9){
+  #backgroundimage{
+    background-image: url("./img/Room_Images/1610.webp");
+  }
 }
-.loungeimage{
-    transition: filter 0.2s ease-in-out, transform 0.3s ease-in-out;
+
+@media (max-aspect-ratio: 1){
+  #backgroundimage{
+    background-image: url("./img/Room_Images/11.webp");
+  }
 }
+
+@media (max-aspect-ratio: 3/4){
+  #backgroundimage{
+    background-image: url("./img/Room_Images/916.webp");
+  }
+}
+
+/*------------------------------------ Navigation Bar ----------------------------------*/
 
 nav{
     z-index: 5;
-    position: relative;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,9 +177,34 @@ nav{
   transform: translateX(-0.6vh) translateY(0.85vh);
 }
 
+@media (max-aspect-ratio: 4/3){
+  nav{
+    display: none;
+  }
+}
 
+/*---------------------------------------- Hamburger for Mobile View -----------------------------------------*/
 
-/* ----------------------------- Search Bar --------------------------------*/
+.hamburger{
+  position: fixed;
+  display: block;
+  z-index: 2;
+  top: 3vh;
+  right: 6vw;
+  display: none;
+}
+
+.hamburgerbutton{
+  filter: invert(100%);
+  width: 8vw;
+  height: auto;
+}
+@media (max-aspect-ratio: 4/3){
+  .hamburger{
+    display: block;
+  }
+}
+/* -------------------------------------- Nav Search Bar ------------------------------------------------*/
 
 .search-container {
     position: relative;
@@ -206,14 +250,15 @@ nav{
 
 /* ------------------------------ Product Highlight Elements -------------------------------*/
 
-.product {
+
+.ripple-effect {
     position: absolute;
     display: flex;
-    height: 5vh;
-    width: 5vh;
-    z-index: 0;
+    height: 4vh;
+    width: 4vh;
+    z-index: 2;
   }
-  .product div {
+  .ripple-effect div {
     animation: ripple 3s infinite ease-out;
     background-color: white;
     border-radius: 50%;
@@ -222,13 +267,13 @@ nav{
     position: absolute;
     width: 100%;
   }
-  .product .circle1 {
+  .ripple-effect .circle1 {
     animation-delay: 0s;
   }
-  .product .circle2 {
+  .ripple-effect .circle2 {
     animation-delay: 1s;
   }
-  .product .circle3 {
+  .ripple-effect .circle3 {
     animation-delay: 2s;
   }
   
@@ -248,103 +293,79 @@ nav{
   }
 
 
-  .product #productlabel{
-    position: absolute;
-    display: block;
-    width:  20vw;
-    display: none;
-    margin-top: 4vh;
+  .productlabel{
+    position: relative;
+    display: flex; /* Make the container a flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: 100vw; /* Optional: Set container width to viewport width */
+    height: 100vh; /* Optional: Set container height to viewport height (for full-screen centering) */  
     
   }
   
-  .product #productlabel p{
-    transform: translateX(-2vw);
-    width: fit-content;
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(3px);
-    padding: 0.4vw 1vw 0.5vw 1vw;
-    border-top-left-radius: 10% 50%;
-    border-top-right-radius: 10% 50%;
-    border-bottom-left-radius: 10% 50%;
-    border-bottom-right-radius: 10% 50%;
-    font-size: 2.3vh; 
-    font-family: zenkaku;
-    color: rgb(60, 60, 60);
-    font-weight: 600;
-    letter-spacing: 0.1em;
-  }
-
-  #productlabel #triangle{
-    content: "";
+  #productimage{
     position: relative;
-    display: flex;
-    transform: translateX(3.2vw);
-    width: 0;
-    height: 0;
-    border-left: 1vh solid transparent;
-    border-right: 1vh solid transparent;
-    border-bottom: 1vh solid rgba(255, 255, 255, 0.8);
-    z-index: 4;
+    z-index: 2;
+    display: none;
+    opacity: 1;
+    width: 70vw;
+    
+    background-size: cover;
+    
   }
+  
 
-  .product:hover #productlabel{
-    outline: none;
-    display: block;
-    animation: appear 0.35s 1;
-    animation-timing-function:linear;
-    transform-origin: bottom;
+  #close{
+    filter: invert(100%);
+    position: relative;
+    width: 2.7vw;
+    height: auto;
+    z-index: 4;
+    display: none;
     
   }
 
-  @keyframes appear {
-    0%   {transform:scaleY(0) translateY(2vh)}
-    70%  {transform:scaleY(1) translateY(1vh)}
-    100%  {transform:scaleY(1) translateY(0vh)}
-}
-
-
-  #product1{
+  #ripple1{
     left: 48.3%;
     top: 49%;
   }
 
-  #product2{
+  #ripple2{
     left: 55%;
     top: 62.5%;
   }
-  #product3{
-    left: 59.7%;
-    top: 32.5%;
+  #ripple3{
+    left: 34.7%;
+    top: 94.5%;
   }
-  #product4{
+
+  #ripple3 div{
+    background-color: blue;
+  }  
+  #ripple4{
     left: 67.1%;
     top: 33.5%;
   }
-  #product5{
+  #ripple5{
     left: 26.3%;
     top: 63.5%;
   }
-  #product5{
-    left: 26.3%;
-    top: 63.5%;
-  }
-  #product6{
+  #ripple6{
     left: 67%;
     top: 63.5%;
   }
 
-  #product7{
+  #ripple7{
     left: 79%;
     top: 67.5%;
   }
-  #product8{
+  #ripple8{
     left: 3%;
     top: 21%;
   }
 
-
-
+ 
+  
 
 /* ------------------------------ Previous Room Button -------------------------------*/
 .prevroomcontainer{
@@ -426,3 +447,4 @@ nav{
     width: 16vh;
   }
 }
+
