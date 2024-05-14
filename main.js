@@ -92,7 +92,7 @@ ripple1.addEventListener("mouseover", function() {
 /*------------------------ Product 2 ------------------------------- */
 ripple2.addEventListener("mouseover", function() {
   product.style.display = "block";
-  product.src = "./img/Product_Images/Von Vene fuente.jpeg";
+  product.src = "./img/Product_Images/Von Vene Fuente.jpeg";
   product.onload = function(){
     const imageHeight = product.naturalHeight;
     const imageWidth = product.naturalWidth;
@@ -111,7 +111,7 @@ ripple2.addEventListener("mouseover", function() {
   
     closelabel.style.display = "block";
     closelabel.style.transform = `translateX(${-0.5 - ((imageWidth/actualimageWidth)*2.4)}vw) translateY(${-((actualimageHeight/2.1))}px)` ;
-  
+    
     for (const ripple of ripples) {
       ripple.style.display = "none";
     }
