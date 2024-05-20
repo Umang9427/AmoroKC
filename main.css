@@ -53,34 +53,17 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./img/Room_Images/169.webp");
+  background-image: url("./img/Room_Images/Lounge/169.webp");
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   transition: all 0.4s ease-in-out;
 }
 
-@media (max-aspect-ratio: 16/9){
-  #backgroundimage{
-    background-image: url("./img/Room_Images/1610.webp");
-  }
-}
-
-@media (max-aspect-ratio: 1){
-  #backgroundimage{
-    background-image: url("./img/Room_Images/11.webp");
-  }
-}
-
-@media (max-aspect-ratio: 3/4){
-  #backgroundimage{
-    background-image: url("./img/Room_Images/916.webp");
-  }
-}
 
 /*------------------------------------ Navigation Bar ----------------------------------*/
 
 nav{
-    z-index: 5;
+    z-index: 3;
     position: absolute;
     display: flex;
     align-items: center;
@@ -176,6 +159,18 @@ nav{
   height: 2.5vh;
   transform: translateX(-0.6vh) translateY(0.85vh);
 }
+.navelement .cartbutton .cartquantity{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 80%;
+  color: rgb(230,230,230);
+  font-family: zenkakulight;
+  font-weight: 400;
+  z-index: 4;
+  transform: translateX(0%) translateY(-30%);
+  display: none;
+}
 
 @media (max-aspect-ratio: 4/3){
   nav{
@@ -185,25 +180,72 @@ nav{
 
 /*---------------------------------------- Hamburger for Mobile View -----------------------------------------*/
 
-.hamburger{
-  position: fixed;
-  display: block;
-  z-index: 2;
-  top: 3vh;
-  right: 6vw;
+.hamburgercontainer{
   display: none;
 }
 
-.hamburgerbutton{
+.hamburger{
+  position: fixed;
+  display: block;
+  
+  z-index: 2;
+  width: 10vw;
+  height: fit-content;
+  top: 3vh;
+  right: 6vw;
+}
+.hamburger img{
   filter: invert(100%);
-  width: 8vw;
-  height: auto;
+  width: inherit;
+  aspect-ratio: 1;
 }
-@media (max-aspect-ratio: 4/3){
-  .hamburger{
-    display: block;
-  }
+.mobilemenu{
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 0%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
+.menus{
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+
+}
+
+
+.menus a {
+  padding: 1vw;
+  text-decoration: none;
+  color: #9b9b9b;
+  display: block; /* Display block instead of inline */
+  font-family: zenkaku;
+  font-size: 4vh;
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+.menus a:nth-child(1){
+  margin-top: 35%;
+}
+
+.mobilemenu #closehamburgericon{
+  position: fixed;
+  filter: invert(50%);
+  top: 3vh;
+  right: 6vw;
+  width: 10vw;
+  aspect-ratio: 1;
+  display: none;
+}
+
+
 /* -------------------------------------- Nav Search Bar ------------------------------------------------*/
 
 .search-container {
@@ -283,7 +325,7 @@ nav{
       transform: scale(0);
     }
     50% {
-        opacity: 0.7;
+        opacity: 0.8;
         transform: scale(0.35);
     }
     100% {
@@ -292,93 +334,326 @@ nav{
     }
   }
 
+/* ------------------------------ Product page on hovering a ripple -------------------------------*/
 
   .productlabel{
     position: relative;
-    display: flex; /* Make the container a flexbox */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    width: 100vw; /* Optional: Set container width to viewport width */
-    height: 100vh; /* Optional: Set container height to viewport height (for full-screen centering) */  
+    
     
   }
+  .productpagecontainer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+   
+    display: inline-block;
+    text-align: center;
+  }
+
+  
   
   #productimage{
     position: relative;
     z-index: 2;
     display: none;
-    opacity: 1;
-    width: 70vw;
-    
-    background-size: cover;
-    
+    height: 65vh;
+    width: auto;
+    max-width: 55vw;
   }
   
 
   #close{
-    filter: invert(100%);
-    position: relative;
+    
+    position: absolute;
     width: 2.7vw;
     height: auto;
-    z-index: 4;
+
+    top: 6%;
+    right: 8%;
     display: none;
-    
+    z-index: 4;
+    cursor: pointer;
   }
 
-  #ripple1{
-    left: 48.3%;
-    top: 49%;
+  .textboxcontainer{
+    position: absolute;
+    background-color: black;
+    user-select: text;
+    pointer-events: auto;
+    top: 0.5%;
+    left: 0;
+    width: 35vw;
+    height: 0px;
+    display: none;
+    z-index: 4;
+   
+  }
+  
+
+  
+  #ripple1{ 
+    /*Kansas*/
+    left: 51.3vw;
+    top: 56vh;
   }
 
   #ripple2{
-    left: 55%;
-    top: 62.5%;
+    /*Fuente*/
+    left: 55vw;
+    top: 69vh;
   }
   #ripple3{
-    left: 34.7%;
-    top: 94.5%;
+    /*Service Page*/
+    left: 67vw;
+    top: 95vh;
   }
 
   #ripple3 div{
-    background-color: blue;
+    background-color: rgb(26, 67, 199);
   }  
   #ripple4{
-    left: 67.1%;
-    top: 33.5%;
+    /*Laguna*/
+    left: 63vw;
+    top: 38vh;
   }
   #ripple5{
-    left: 26.3%;
-    top: 63.5%;
+    /*Shirley*/
+    left: 72vw;
+    top: 38vh;
   }
   #ripple6{
-    left: 67%;
-    top: 63.5%;
+    /*Buds*/
+    left: 57vw;
+    top: 72.7vh;
   }
 
   #ripple7{
-    left: 79%;
-    top: 67.5%;
+    /*Bottle*/
+    left: 65.2vw;
+    top: 69.7vh;
   }
   #ripple8{
-    left: 3%;
-    top: 21%;
+    /*Mug*/
+    left: 68.2vw;
+    top: 71.7vh;
   }
+  #ripple9{
+    /*Blanket*/
+    left: 82.2vw;
+    top: 66.7vh;
+  }
+  #ripple10{
+    /*Suitcase*/
+    left: 33vw;
+    top: 71.5vh;
+  }
+  #ripple11{
+    /*Beach Towel*/
+    left: 26vw;
+    top: 59.2vh;
+  }
+  #ripple12{
+    /*Yoga Mat*/
+    left: 33vw;
+    top: 94.2vh;
+  }
+  #ripple13{
+    /*T-Shirt*/
+    left: 1.8vw;
+    top: 20.2vh;
+  }
+  #ripple14{
+    /*About Us Page*/
+    left: 18vw;
+    top: 56.2vh;
+  }
+  #ripple14 div{
+    background-color: rgb(26, 67, 199);
+  }  
 
- 
+
+/* ---------------- Textbox Styling of Product details -----------------*/
+ .productname{
+  position: absolute;
+  top: 4%;
+  left: 8%;
+  font-family: zenkakulight; 
+  color: rgb(200,200,200);
+  font-weight: 400;
+  font-size: 5vh;
+  letter-spacing: 0;
+ }
+ .productprice{
+  position: absolute;
+  top: 20%;
+  left: 8.5%;
+  font-family: zenkaku; 
+  color: rgb(200,200,200);
+  font-weight: 600;
+  font-size: 3vh;
+  letter-spacing: 0.05em;
+ }
+ .productdetails{
+  position: absolute;
+  top: 35%;
+  left: 8.5%;
+  font-family: zenkaku; 
+  color: rgb(200, 200, 200);
+  font-weight: 400;
+  font-size: 2vh;
+  letter-spacing: 0.05em;
+  text-align: left;
+  cursor:text;
+  user-select: text;
+ }
   
+ .shippingcontainer{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 55%;
+  left: 8.5%;
+ 
+  width: 90%;
+  height: 2.2vh;
+  cursor: pointer;
+ }
+
+
+ .shippingcontainer h3{
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  user-select: text;
+  font-family: zenkakulight; 
+  color: rgb(200, 200, 200);
+  font-weight: 400;
+  font-size: 2vh;
+  letter-spacing: 0.05em;
+ }
+ 
+ .shippingcontainer img{
+  text-align: right;
+  filter: invert(90%);
+  position: relative;
+  top: 55%;
+  right: 8%;
+  font-size: 1.8vh;
+ }
+ #expand2{
+  top: 60%
+ }
+
+ #expand3{
+  top: 65%
+ }
+
+
+ .productquantitycontainer{
+  position: absolute;
+  top: 80%;
+  left: 8.5%;
+  display: flex;
+  align-items: center;
+  border: 0.3vh solid rgb(26, 67, 199);
+  width: 20%;
+  height: fit-content;
+  
+ }
+ 
+ .minusbutton {
+  position: relative;
+  top: 0;
+  margin-left: 0;
+  width: 2vw;
+  height: 4vh;
+  cursor: pointer;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.currentquantity{
+  position: relative;
+  top: 0;
+  text-align: center;
+ 
+  font-size: 2vh;
+  color: rgb(230,230,230);
+  font-family: zenkakulight;
+  text-align: center;
+  padding: 1vh 1% 1vh 1%;
+  margin: auto;
+  transform: translateX(70%) translateY(-5%);
+}
+
+
+
+.plusbutton {
+  position: relative;
+  top: 0;
+  margin-left: auto;
+  width: 2vw;
+  height: 4vh;
+  cursor: pointer;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  filter: invert(100%);
+}
+
+
+.addtocart{
+  position: absolute;
+  top: 80%;
+  left: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.3vh solid rgb(26, 67, 199);
+  width: 25%;
+  height: 5.5vh;
+  cursor: pointer;
+}
+
+.buynow{
+  position: absolute;
+  top: 80%;
+  left: 65.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:  rgb(23, 59, 175);
+  width: 25%;
+  height: 5.5vh;
+  cursor: pointer;
+}
+
+.addtocart h3, .buynow h3{
+  position: relative;
+  top: 0;
+  font-size: 1.8vh;
+  color: rgb(230,230,230);
+  font-family: zenkakulight;
+  font-weight: 400;
+  text-transform: uppercase;
+  transform: translateY(-8%);
+  margin: auto;
+}
+
+
+
 
 /* ------------------------------ Previous Room Button -------------------------------*/
 .prevroomcontainer{
   position: absolute;
   display: flex;
   flex-direction: row;
-  content: "";
   left: 15%;
   top: 75%;
   border: none;
   background: none;
-  z-index: 1;
-  display: none;
+  z-index: 2;
+  overflow: hidden; 
+  cursor: pointer;
 }
 
 .prevroomcontainer .arrowleft{
@@ -390,7 +665,10 @@ nav{
   width: 4vh;
   height: 4vh;
   
-  border-radius: 50%;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
   z-index: 1;
   background: none;
   
@@ -402,7 +680,7 @@ nav{
   display: inline-block;
   font-size: 2.2vh;
   margin: auto;
-  
+  white-space: nowrap;
   color: rgb(255, 255, 255);
   font-family: zenkaku;
   font-weight: 400;
@@ -413,13 +691,10 @@ nav{
 
 
 .prevroomcontainer:hover{
-  border-top-left-radius: 10% 50%;
-  border-top-right-radius: 10% 50%;
-  border-bottom-left-radius: 10% 50%;
-  border-bottom-right-radius: 10% 50%;
-  padding-right: 1.2vh;
+ 
+  
   border: 0.2vh solid rgb(255, 255, 255);
-  animation: reveal 2s ease-in-out forwards;
+  animation: reveal 0.22s cubic-bezier(0, 0.8, 0.5, 1) forwards;
 }
 .prevroomcontainer:hover .arrowleft{
   border: none;
@@ -427,24 +702,256 @@ nav{
 
 .prevroomcontainer:hover h5{
   content: attr("Enter Studio");
-  display: inline-block;
   opacity: 0;
-  animation: revealtext 2s steps(12, end) forwards;
+  animation: revealtext 0.22s steps(30, end) forwards;
   
 }
 
 @keyframes revealtext {
-  from{ width: 0vh; opacity: 0; display: inline-block;}
-  to { width: 15vh; opacity: 1; display: inline-block;}
+  from{ width: 0vw;
+     opacity: 0;
+
+    }
+  to { width: 7vw; opacity: 1;}
 }
 
 @keyframes reveal{
-  0% {
+  from {
     width: 4vh;
+    padding-right: 0vw;
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
   }
  
-  100% {
-    width: 16vh;
+  to {
+    width: max-content;
+    padding-right: 0.6vw;
+    border-top-left-radius: 10% 50%;
+    border-top-right-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+    border-bottom-right-radius: 10% 50%;
   }
 }
 
+
+@media (max-aspect-ratio: 16/9){
+  #backgroundimage{
+    background-image: url("./img/Room_Images/Lounge/1610.webp");
+  }
+  
+}
+
+@media (max-aspect-ratio: 4/3){
+  #backgroundimage{
+    background-image: url("./img/Room_Images/Lounge/43.webp");
+  }
+}
+
+@media (max-aspect-ratio: 1){
+  #backgroundimage{
+    background-image: url("./img/Room_Images/Lounge/11.webp");
+  }
+}
+
+@media (max-aspect-ratio: 3/4){
+  #backgroundimage{
+    background-image: url("./img/Room_Images/Lounge/34.webp");
+  }
+  .hamburgercontainer{
+    display: block;
+  }
+  .productpagecontainer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50%), (-50%));
+    display: inline-block;
+    text-align: center;
+  }
+  #productimage{
+    height: 55vh;
+    width: auto;
+    max-width: 90vw;
+    display: none;
+  }
+  .textboxcontainer{
+    top: 100%;
+    left: 0;
+    height: 0px;
+    width: 0px;
+    
+  }
+  
+  .productname{
+    left: 6.5%;
+    font-size: 3vh;
+  }
+
+  #close{
+    width: 6vw;
+  }
+  .productprice{
+    top: 15%;
+    left: 6.5%;
+    font-size: 2.5vh;
+  }
+
+  .productdetails{
+    top: 25%;
+    left: 6.5%;
+    font-size: 1.8vh;
+  }
+  .shippingcontainer{
+    top: 48%;
+    left: 6.5%;
+    height: 2vh;
+  }
+  .shippingcontainer h3{
+    font-size: 1.8vh;
+  }
+
+  .shippingcontainer img{
+    font-size: 1.6vh;
+  }
+  #expand2{
+    top: 53%;
+    left: 6.5%;
+   }
+
+   #expand3{
+    top: 58%;
+    left: 6.5%;
+   }
+   .productquantitycontainer{
+    top: 70%;
+    left: 6.5%;
+    border: 0.3vh solid rgb(26, 67, 199);
+    width: 34%;
+   }
+   .minusbutton {
+    width: 5vw;
+    height: 4vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-left: 5%;
+  }
+  .currentquantity{
+    position: relative;
+    top: 0;
+    font-size: 1.8vh;
+    padding: 1vh 1% 1vh 1%;
+    margin: auto;
+    transform: translateX(90%) translateY(-8%);
+  }
+  .plusbutton {
+    width: 5vw;
+    height: 4vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-right: 5%;
+    filter: invert(100%);
+  }
+  .addtocart{
+    top: 70%;
+    left: 47%;
+    border: 0.3vh solid rgb(26, 67, 199);
+    width: 45%;
+    height: 5.5vh;
+  }
+  
+  .buynow{
+    top: 83%;
+    left: 6.5%;
+    background:  rgb(23, 59, 175);
+    width: 85%;
+    height: 5.5vh;
+    cursor: pointer;
+  }
+
+    
+  #ripple1{ 
+    /*Kansas*/
+    display: none ;
+  }
+
+  #ripple2{
+    /*Fuente*/
+    left: 16.2vw;
+    top: 71.3vh;
+  }
+  #ripple3{
+    /*Service Page*/
+    left: 85vw;
+    top: 92vh;
+  } 
+  #ripple4{
+    /*Laguna*/
+    left: 24vw;
+    top: 50vh;
+  }
+  #ripple5{
+    /*Shirley*/
+    left: 62vw;
+    top: 50vh;
+  }
+  #ripple6{
+    /*Buds*/
+    left: 31.2vw;
+    top: 72.7vh;
+  }
+
+  #ripple7{
+    /*Bottle*/
+    left: 61.2vw;
+    top: 70.7vh;
+  }
+  #ripple8{
+    /*Mug*/
+    left: 77.2vw;
+    top: 71.7vh;
+  }
+  #ripple9{
+    /*Blanket*/
+    display: none;
+  }
+  #ripple10{
+    /*Suitcase*/
+    display: none;
+  }
+  #ripple11{
+    /*Beach Towel*/
+    display: none;
+  }
+  #ripple12{
+    /*Yoga Mat*/
+    left: 30vw;
+    top: 96.2vh;
+  }
+  #ripple13{
+    /*T-Shirt*/
+    display: none;
+  }
+  #ripple14{
+    /*About Us Page*/
+    left: 3vw;
+    top: 34.2vh;
+  }
+  .prevroomcontainer{
+    left: 10%;
+    top: 82%;
+  }
+  @keyframes revealtext {
+    from{ width: 0vw;
+       opacity: 0;
+  
+      }
+    to { width: 31vw; opacity: 1;}
+  }
+}
+@media (min-aspect-ratio: 16/9){
+  #backgroundimage{
+    background-image: url("./img/Room_Images/Lounge/169.webp");
+  }
+}
