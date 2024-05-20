@@ -740,13 +740,87 @@ nav{
   #backgroundimage{
     background-image: url("./img/Room_Images/Lounge/1610.webp");
   }
-  
+  #ripple1{ 
+    /*Kansas*/
+    left: 52.5vw;
+    top: 58vh;
+  }
+
+  #ripple2{
+    /*Fuente*/
+    left: 56vw;
+    top: 72vh;
+  }
+  #ripple3{
+    /*Service Page*/
+    left: 68vw;
+    top: 96vh;
+  }
+ 
+  #ripple4{
+    /*Laguna*/
+    left: 65vw;
+    top: 42vh;
+  }
+  #ripple5{
+    /*Shirley*/
+    left: 75vw;
+    top: 43vh;
+  }
+  #ripple6{
+    /*Buds*/
+    left: 57.3vw;
+    top: 73.7vh;
+  }
+
+  #ripple7{
+    /*Bottle*/
+    left: 66.2vw;
+    top: 71.2vh;
+  }
+  #ripple8{
+    /*Mug*/
+    left: 69.5vw;
+    top: 74vh;
+  }
+  #ripple9{
+    /*Blanket*/
+    left: 85.2vw;
+    top: 71.7vh;
+  }
+  #ripple10{
+    /*Suitcase*/
+    left: 34vw;
+    top: 71.5vh;
+  }
+  #ripple11{
+    /*Beach Towel*/
+    left: 26vw;
+    top: 61.2vh;
+  }
+  #ripple12{
+    /*Yoga Mat*/
+    left: 35vw;
+    top: 94.2vh;
+  }
+  #ripple13{
+    /*T-Shirt*/
+    left: 1.1vw;
+    top: 26.2vh;
+  }
+  #ripple14{
+    /*About Us Page*/
+    left: 18vw;
+    top: 60vh;
+  }
+   
 }
 
 @media (max-aspect-ratio: 4/3){
   #backgroundimage{
     background-image: url("./img/Room_Images/Lounge/43.webp");
   }
+  
 }
 
 @media (max-aspect-ratio: 1){
@@ -758,6 +832,7 @@ nav{
 @media (max-aspect-ratio: 3/4){
   #backgroundimage{
     background-image: url("./img/Room_Images/Lounge/34.webp");
+    background-position: bottom;
   }
   .hamburgercontainer{
     display: block;
@@ -873,7 +948,8 @@ nav{
     
   #ripple1{ 
     /*Kansas*/
-    display: none ;
+    top: -10vh;
+    left: -10vw;
   }
 
   #ripple2{
@@ -914,15 +990,18 @@ nav{
   }
   #ripple9{
     /*Blanket*/
-    display: none;
+    top: -10vh;
+    left: -10vw;
   }
   #ripple10{
     /*Suitcase*/
-    display: none;
+    top: -10vh;
+    left: -10vw;
   }
   #ripple11{
     /*Beach Towel*/
-    display: none;
+    top: -10vh;
+    left: -10vw;
   }
   #ripple12{
     /*Yoga Mat*/
@@ -931,7 +1010,8 @@ nav{
   }
   #ripple13{
     /*T-Shirt*/
-    display: none;
+    top: -10vh;
+    left: -10vw;
   }
   #ripple14{
     /*About Us Page*/

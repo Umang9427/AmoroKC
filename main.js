@@ -97,6 +97,18 @@ function conditionalhandleclose(){
     });
 }
 
+//Closing the product page, when it is clicked outside the product page
+document.addEventListener('click', function(){
+  const rect1 = product.getBoundingClientRect();
+  const rect2 = blackBox.getBoundingClientRect();
+  if (
+      event.clientX < rect1.left ||
+      event.clientX > rect2.right ||
+      event.clientY > rect2.bottom ||
+      event.clientY < rect2.top
+    ) {handleclose();}
+  });
+
 //function to set product postion
 function setproductposition(){
   if (mobile === 0){
