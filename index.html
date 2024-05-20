@@ -52,6 +52,18 @@
   <!-- ************************* Preloading Images *****************************-->
   <link rel="preload" as="image" href="./img/Product_Images/Von Vene Kansas.jpeg">
   <link rel="preload" as="image" href="./img/Product_Images/Von Vene Fuente.jpeg">
+  <link rel="preload" as="image" href="./img/Room_Images/Lounge/169.webp">
+  <link rel="preload" as="image" href="./img/Product_Images/Beach_towel.webp">
+  <link rel="preload" as="image" href="./img/Product_Images/Big_Pocket_TShirt.webp">
+  <link rel="preload" as="image" href="./img/Product_Images/Blanket.webp">
+  <link rel="preload" as="image" href="./img/Product_Images/Mug.webp">
+  <link rel="preload" as="image" href="./img/Product_Images/Small_Tshirt.webp">
+  <link rel="preload" as="image" href="./img/Product_Images/Suitcase.webp">
+  <link rel="preload" as="image" href="./img/Product_Images/Von Vene Buds.webp">
+  <link rel="preload" as="image" href="./img/Product_Images/Von Vene Laguna.webp">
+  <link rel="preload" as="image" href="./img/Product_Images/Von Vene Shirley.webp">
+  <link rel="preload" as="image" href="./img/Product_Images/WaterBottle.webp">
+  <link rel="preload" as="image" href="./img/Product_Images/yoga_mat.webp">
 </head>
 
 <body>
@@ -91,6 +103,7 @@
               <div class="encircle">
                 <a class="cartbutton" href="./index.html">
                   <img class="icon5" src="./Icons/Cart.svg" width="auto" height="auto" alt="User's Product Cart" loading="eager">
+                  <p class = "cartquantity" id="cartquantity">0</p>
                 </a>
               </div>
             </div>
@@ -107,8 +120,19 @@
         </div>
     </nav>  
 
-    <div class="hamburger">
-      <img class = "hamburgerbutton" src="./Icons/hamburger.svg" width="auto" height="auto" loading="eager">
+    <div class="hamburgercontainer">
+      <div class="hamburger" onclick="openNav()">
+        <img src="./Icons/hamburger.svg" width="auto" height="auto" loading="eager">
+      </div>
+      <div class="mobilemenu" id="mobilemenu">
+        <div class = "menus">
+          <a href="./index.html" class="aboutmenu">About</a>
+          <a href="./index.html">Services</a>
+          <a href="./index.html">Clients</a>
+          <a href="./index.html">Contact</a>
+        </div>
+        <img id="closehamburgericon" onclick="closeNav()" src="./Icons/Close.svg" width="auto" height="auto" loading="eager">
+      </div>
     </div>
     <!-- *********************** Navigation Bar End *****************************-->
 
@@ -116,9 +140,50 @@
     <div  class="producthighlightcontainer">
 
       <div class="productlabel">
-        
-        <img id="productimage" src="" width="auto" height="auto" loading="eager">
-        <img id="close" src="./Icons/Close.svg" width="auto" height="auto" loading="eager">
+        <div class="productpagecontainer" id="productpagecontainer">
+          <img id="productimage" src="" width="auto" height="auto" loading="eager">
+          
+          <div class = "textboxcontainer" id="textboxcontainer">
+            <div class = "productdescription" id = "productdescription">
+              <h1 class = "productname" id="productname">Von Vene Kansas</h1>
+              <h2 class = "productprice" id = "productprice">$64.99</h2>
+              <p class="productdetails" id="productdetails">
+                DOS: Von, Vene, Ricardo, Tyree, Nicole Von + Love &#38; Co.<br>
+                Kansas: Birthplace<br>
+                Color: Sage for Growth
+              </p>
+              <div class="shippingcontainer" id ="expand1">
+                <h3>Shipping information</h3>
+                <img src="./Icons/Plus.svg" width="auto" height="auto" loading="eager">
+              </div>
+              <div class="shippingcontainer" id ="expand2">
+                <h3>Return Policy</h3>
+                <img src="./Icons/Plus.svg" width="auto" height="auto" loading="eager">
+              </div>
+
+              <div class="shippingcontainer" id ="expand3">
+                <h3>Payment Methods</h3>
+                <img src="./Icons/Plus.svg" width="auto" height="auto" loading="eager">
+              </div>
+
+              <div class = "productquantitycontainer">
+                  <img class="minusbutton" id="minusbutton" src="./Icons/Minus.svg" width="auto" height="auto" loading="eager"></img>
+                  <p class = "currentquantity" id = "currentquantity">1</p>
+                  <img class="plusbutton" id="plusbutton" src="./Icons/Plus.svg" width="auto" height="auto" loading="eager"></img>
+                 
+              </div>
+
+              <div class="addtocart" id="addtocart">
+                  <h3>Add to Cart</h3>
+              </div>
+              <div class = "buynow">
+                <h3>Buy Now</h3>
+              </div>
+              <img class="close" id="close" src="./Icons/Close.svg" width="auto" height="auto" loading="eager">
+            </div>
+          </div>
+          
+       </div>
       </div>
 
       <div class="productcontainer">
@@ -128,9 +193,6 @@
             <div class="circle3"></div>
         </div>
       </div>
-
-    
-      
 
       <div class="productcontainer">
         <div class="ripple-effect" id="ripple2">
@@ -147,12 +209,98 @@
             <div class="circle3"></div>
         </div>
       </div>
-      
 
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple4">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+      </div>
+
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple5">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+      </div>
+
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple6">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+      </div>
+
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple7">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+      </div>
+
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple8">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+      </div>
+
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple9">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+      </div>
+
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple10">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+      </div>
+
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple11">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+      </div>
+
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple12">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+      </div>
       
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple13">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+      </div>
+      
+      <div class="productcontainer">
+        <div class="ripple-effect" id="ripple14">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+      </div>
+
     </div>
 
-    <button class="prevroomcontainer">
+    <button class="prevroomcontainer" id="prevroomcontainer">
       <img class="arrowleft" src="./Icons/Arrowleft.svg" width="auto" height="auto" alt="Arrow back button | Previous Interior Room" loading="eager">
       <h5>Enter Studio</h5>
     </button>
