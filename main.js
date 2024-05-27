@@ -139,11 +139,11 @@ function blackBoxposition(width, height){
 
   else if (mobile === 1){
     blackBox.style.left = "0%";
-    blackBox.style.top = "100%";
+    blackBox.style.top = "99%";
     blackBox.style.width = `${width}px`;
     const rect = blackBox.getBoundingClientRect();
-    const screenHeight = window.innerHeight;
-    var blackboxheight = (screenHeight - rect.top) * 0.9; //Get the blackbox height to reach until the bottom of screen. Then decrease 10% of it 
+    const screenHeight = screen.availHeight;
+    var blackboxheight = (screenHeight - rect.top) * 0.7; //Get the blackbox height to reach until the bottom of screen. Then decrease 10% of it 
     blackBox.style.height = `${blackboxheight}px`;
     blackBox.style.transform = `translateX(0px)`;
   }
