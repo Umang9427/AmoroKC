@@ -49,6 +49,8 @@ const productlabel = document.getElementById("productlabel");
 const ripples = document.querySelectorAll('.ripple-effect');
 var blackBox = document.getElementById('textboxcontainer');
 const prevbutton = document.getElementById('prevroomcontainer');
+var isHoveringProduct = 0;
+var isHoveringBlackbox = 0;
 
 const ripple1 = document.getElementById("ripple1");
 const ripple2 = document.getElementById("ripple2");
@@ -70,7 +72,9 @@ function handleclose(){
   loungeimage.style.transform = "scale(1)";
   loungeimage.style.transformOrigin = `${top}px ${left}px`;
   loungeimage.style.filter= "blur(0px)";
+  
   product.style.display = "none";
+  
   for (const ripple of ripples) {
     ripple.style.display = "block";
   }
@@ -93,7 +97,10 @@ function conditionalhandleclose(){
         event.clientX > rect2.right ||
         event.clientY > rect2.bottom ||
         event.clientY < rect2.top
-      ) {handleclose();}
+      ) {handleclose();
+    
+    
+      }
     });
 }
 
@@ -124,6 +131,7 @@ function setproductposition(){
 function blackBoxposition(width, height){
 
   if (mobile === 0){
+  
     blackBox.style.height = `${height}px`;
     blackBox.style.top = "0px";
     blackBox.style.transform = `translateX(${width}px)`;
@@ -184,12 +192,10 @@ function showproduct(imgsrc, top, left){
 
     product.style.width = `${actualimageWidth}px`;
     product.style.height = `${actualimageHeight}px`;
-    
-    
+    setproductposition();
     
     closelabel.style.display = "block";
     blackBox.style.display = "block";
-
     
     blackBoxposition(actualimageWidth, actualimageHeight); //Get blackboxposition based on different screen sizes.
 
@@ -203,24 +209,46 @@ function showproduct(imgsrc, top, left){
     
     product.style.display = "inline-block"; /* Somehow, display:none gets activated. I am adding this again */
     closelabel.addEventListener("click", handleclose);
-
-    
       
-    document.addEventListener('mousemove', function(){
-    const rect1 = product.getBoundingClientRect();
-    const rect2 = blackBox.getBoundingClientRect();
-    if (
-        event.clientX > rect1.left &&
-        event.clientX < rect2.right &&
-        event.clientY < rect2.bottom &&
-        event.clientY > rect2.top
-      ) {conditionalhandleclose();
-        //This function ensures that mouse has entered the product page atleast once 
+    //Creating mouse leave events. The mouse should have entered once for it to work.
+    product.addEventListener("mouseover", () => {
+      if (isHoveringProduct < 1){
+        isHoveringProduct = isHoveringProduct + 1;
+        }
+    });
+
+    product.addEventListener("mouseleave", () => {
+      if (isHoveringProduct < 2){
+        isHoveringProduct = isHoveringProduct + 1;
+      }
+      rect1 = product.getBoundingClientRect();
+      if ((isHoveringBlackbox === 2 || isHoveringProduct === 2) && event.clientX < rect1.right){
+        isHoveringProduct = 0;
+        isHoveringBlackbox = 0;
+        handleclose();
       }
     });
 
+    blackBox.addEventListener("mouseover", () => {
+      if (isHoveringBlackbox < 1){
+      isHoveringBlackbox = isHoveringBlackbox + 1;
+      }
+    });
+  
+    blackBox.addEventListener("mouseleave", () => {
+      if (isHoveringBlackbox < 2){
+        isHoveringBlackbox = isHoveringBlackbox + 1;
+      }
+      rect2 = blackBox.getBoundingClientRect();
+      if ((isHoveringBlackbox === 2 || isHoveringProduct === 2) && event.clientX > rect2.left){
+        isHoveringProduct = 0;
+        isHoveringBlackbox = 0;
+        handleclose();
+      }
+    });
 };
 }
+
 
 //Declaring the Variables
 const productname = document.getElementById ('productname');
@@ -233,12 +261,12 @@ ripple1.addEventListener("mouseover", function() {
   productprice.textContent = "$64.99";
   productdetails.innerHTML = `DOS: Von, Vene, Ricardo, Tyree, Nicole Von + Love &#38; Co.<br>
   Kansas: Birthplace<br>
-  Color: Sage for Growth`;
+  Color: Sage for Growth<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple1.getBoundingClientRect(); //Ensuring correct transform origin for scale transition of background image
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
+  
   showproduct(imgsrc= "./img/Product_Images/Von Vene Kansas.webp", top=circleCenterX, left=circleCenterY);
 });
 ripple1.addEventListener("click", function() {
@@ -246,12 +274,11 @@ ripple1.addEventListener("click", function() {
   productprice.textContent = "$64.99";
   productdetails.innerHTML = `DOS: Von, Vene, Ricardo, Tyree, Nicole Von + Love &#38; Co.<br>
   Kansas: Birthplace<br>
-  Color: Sage for Growth`;
+  Color: Sage for Growth<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple1.getBoundingClientRect();
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Von Vene Kansas.webp", top=circleCenterX, left=circleCenterY);
 });
 
@@ -261,12 +288,11 @@ ripple2.addEventListener("mouseover", function() {
   productprice.textContent = "$64.99";
   productdetails.innerHTML = `Tres: Birthday Month and Third Born <br>
   Fuente: Source and Von's Favourite Cigar
-  Color: Sand for the Earth`;
+  Color: Sand for the Earth<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple2.getBoundingClientRect();  
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Von Vene Fuente.webp", top=circleCenterX, left=circleCenterY);
 });
 
@@ -275,12 +301,11 @@ ripple2.addEventListener("click", function() {
   productprice.textContent = "$64.99";
   productdetails.innerHTML = `Tres: Birthday Month and Third Born<br>
   Fuente: Source and Von's Favourite Cigar <br>
-  Color: Sand for the Earth`;
+  Color: Sand for the Earth<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple2.getBoundingClientRect();
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Von Vene Fuente.webp", top=circleCenterX, left=circleCenterY);
 });
 
@@ -290,12 +315,11 @@ ripple4.addEventListener("mouseover", function() {
   productprice.textContent = "$64.99";
   productdetails.innerHTML = `Laguna: Emerald Bay &#38; Fisherman's Cove is my happy place. 
   The dream is to move my family <br>
-  Color: White for peace and surrender`;
+  Color: White for peace and surrender<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple4.getBoundingClientRect();  
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Von Vene Laguna.webp", top=circleCenterX, left=circleCenterY);
 });
 
@@ -304,12 +328,12 @@ ripple4.addEventListener("click", function() {
   productprice.textContent = "$64.99";
   productdetails.innerHTML = `Laguna: Emerald Bay &#38; Fisherman's Cove is my happy place. 
   The dream is to move my family <br>
-  Color: White for peace and surrender`;
+  Color: White for peace and surrender<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple4.getBoundingClientRect();
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
+ 
   showproduct(imgsrc= "./img/Product_Images/Von Vene Laguna.webp", top=circleCenterX, left=circleCenterY);
 });
 
@@ -318,12 +342,11 @@ ripple5.addEventListener("mouseover", function() {
   productname.textContent = "Von Vene Shirley";
   productprice.textContent = "$64.99";
   productdetails.innerHTML = `Uno: Mother  &#38; the first candle maker <br>
-  Color: Cream for her beautiful smooth soul`;
+  Color: Cream for her beautiful smooth soul<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple5.getBoundingClientRect();  
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Von Vene Shirley.webp", top=circleCenterX, left=circleCenterY);
 });
 
@@ -331,212 +354,220 @@ ripple5.addEventListener("click", function() {
   productname.textContent = "Von Vene Shirley";
   productprice.textContent = "$64.99";
   productdetails.innerHTML = `Uno: Mother  &#38; the first candle maker <br>
-  Color: Cream for her beautiful smooth soul`;
+  Color: Cream for her beautiful smooth soul<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple5.getBoundingClientRect();
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Von Vene Shirley.webp", top=circleCenterX, left=circleCenterY);
 });
 
 /*------------------------ Product 6 ------------------------------- */
 ripple6.addEventListener("mouseover", function() {
   productname.textContent = "Von Vene Buds";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productprice.textContent = "$64.99";
+  productdetails.innerHTML = `The Earbuds comes with their own custom case. <br>
+  Features: 2 hours of playback time, universally comfortable fit<br>
+  and built-in controls<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple6.getBoundingClientRect();  
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Von Vene Buds.webp", top=circleCenterX, left=circleCenterY);
 });
 
 ripple6.addEventListener("click", function() {
   productname.textContent = "Von Vene Buds";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productprice.textContent = "$64.99";
+  productdetails.innerHTML = `The Earbuds comes with their own custom case. <br>
+  Features: 2 hours of playback time, universally comfortable fit<br>
+  and built-in controls<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple6.getBoundingClientRect();
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Von Vene Buds.webp", top=circleCenterX, left=circleCenterY);
 });
 
 /*------------------------ Product 7 ------------------------------- */
 ripple7.addEventListener("mouseover", function() {
   productname.textContent = "Von Vene Bottle";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productprice.textContent = "$30.48";
+  productdetails.innerHTML = `The bottle's Double-wall construction allows hot liquids to stay hot for upto 12 hours
+   while colder choices can last full 48 hours.<br>
+   Stainless steel sides resist scratch and fade<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple7.getBoundingClientRect();  
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/WaterBottle.webp", top=circleCenterX, left=circleCenterY);
 });
 
 ripple7.addEventListener("click", function() {
   productname.textContent = "Von Vene Bottle";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productprice.textContent = "$30.48";
+  productdetails.innerHTML = `The bottle's Double-wall construction allows hot liquids to stay hot for upto 12 hours
+  while colder choices can last full 48 hours.<br>
+  Stainless steel sides resist scratch and fade<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple7.getBoundingClientRect();
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/WaterBottle.webp", top=circleCenterX, left=circleCenterY);
 });
 
 /*------------------------ Product 8 ------------------------------- */
 ripple8.addEventListener("mouseover", function() {
-  productname.textContent = "Von Vene Mug";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productname.textContent = "Von Vene Ceramic Mug";
+  productprice.textContent = "$12.99";
+  productdetails.innerHTML = `BPA and Lead-free, microwave & dishwasher-safe,
+   and made of durable white ceramic in 11-ounce and 15-ounce sizes. 
+   The perfect gift for coffee, tea, and chocolate lovers<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple8.getBoundingClientRect();  
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Mug.webp", top=circleCenterX, left=circleCenterY);
 });
 
 ripple8.addEventListener("click", function() {
-  productname.textContent = "Von Vene Mug";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productname.textContent = "Von Vene Ceramic Mug";
+  productprice.textContent = "$12.99";
+  productdetails.innerHTML = `BPA and Lead-free, microwave & dishwasher-safe,
+  and made of durable white ceramic in 11-ounce and 15-ounce sizes. 
+  The perfect gift for coffee, tea, and chocolate lovers<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple8.getBoundingClientRect();
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Mug.webp", top=circleCenterX, left=circleCenterY);
 });
 
 /*------------------------ Product 9 ------------------------------- */
 ripple9.addEventListener("mouseover", function() {
-  productname.textContent = "Von Vene Blanket";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productname.textContent = "Von Vene Sherpa Blanket";
+  productprice.textContent = "$104.99";
+  productdetails.innerHTML = `The Hooded fleece blanket is made with 100% supremely soft polyester.
+  It delivers fuzzy warmth during winters. Its cream-colored hood brings extra style points to your comfort<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple9.getBoundingClientRect();  
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Blanket.webp", top=circleCenterX, left=circleCenterY);
 });
 
 ripple9.addEventListener("click", function() {
-  productname.textContent = "Von Vene Blanket";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productname.textContent = "Von Vene Sherpa Blanket";
+  productprice.textContent = "$104.99";
+  productdetails.innerHTML = `The Hooded fleece blanket is made with 100% supremely soft polyester.
+  It delivers fuzzy warmth during winters. Its cream-colored hood brings extra style points to your comfort<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple9.getBoundingClientRect();
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Blanket.webp", top=circleCenterX, left=circleCenterY);
 });
 
 /*------------------------ Product 10 ------------------------------- */
 ripple10.addEventListener("mouseover", function() {
   productname.textContent = "Von Vene Suitcase";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productprice.textContent = "$299.99";
+  productdetails.innerHTML = `Comes with adjustable handle, 360 degree swivel wheels<br> and a safety lock. 
+  Available in multiple sizes to accommodate your needs<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple10.getBoundingClientRect();  
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Suitcase.webp", top=circleCenterX, left=circleCenterY);
 });
 
 ripple10.addEventListener("click", function() {
   productname.textContent = "Von Vene Suitcase";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productprice.textContent = "$299.99";
+  productdetails.innerHTML = `Comes with adjustable handle, 360 degree swivel wheels<br> and a safety lock. 
+  Available in multiple sizes to accommodate your needs<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple10.getBoundingClientRect();
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
+
   showproduct(imgsrc= "./img/Product_Images/Suitcase.webp", top=circleCenterX, left=circleCenterY);
 });
 
 /*------------------------ Product 11 ------------------------------- */
 ripple11.addEventListener("mouseover", function() {
   productname.textContent = "Von Vene Beach Towel";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productprice.textContent = "$88.99";
+  productdetails.innerHTML = `Made with 100% soft polyester, these beach cloths come in a big size of 38" x 81".<br>
+  Perfect take-alongs for all your excursions<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple11.getBoundingClientRect();  
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Beach_towel.webp", top=circleCenterX, left=circleCenterY);
 });
 
 ripple11.addEventListener("click", function() {
   productname.textContent = "Von Vene Beach Towel";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productprice.textContent = "$88.99";
+  productdetails.innerHTML = `Made with 100% soft polyester, these beach cloths come in a big size of 38" x 81".<br>
+  Perfect take-alongs for all your excursions<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple11.getBoundingClientRect();
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Beach_towel.webp", top=circleCenterX, left=circleCenterY);
 });
 
 /*------------------------ Product 12 ------------------------------- */
 ripple12.addEventListener("mouseover", function() {
   productname.textContent = "Von Vene Yoga Mat";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productprice.textContent = "$50.77";
+  productdetails.innerHTML = `Custom-printed rubber yoga mat with edge-to-edge printing in crisp detail.
+  Featuring an anti-slip rubber bottom and a higher comfort factor with impact absorption<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple12.getBoundingClientRect();  
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/yoga_mat.webp", top=circleCenterX, left=circleCenterY);
 });
 
 ripple12.addEventListener("click", function() {
   productname.textContent = "Von Vene Yoga Mat";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productprice.textContent = "$50.77";
+  productdetails.innerHTML = `Custom-printed rubber yoga mat with edge-to-edge printing in crisp detail.
+  Featuring an anti-slip rubber bottom and a higher comfort factor with impact absorption<span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple12.getBoundingClientRect();
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/yoga_mat.webp", top=circleCenterX, left=circleCenterY);
 });
 
 /*------------------------ Product 13 ------------------------------- */
 ripple13.addEventListener("mouseover", function() {
-  productname.textContent = "Von Vene T-Shirt";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productname.textContent = "Von Vene Unisex Tee";
+  productprice.textContent = "$29.99";
+  productdetails.innerHTML = `Comfort of cotton and durability of polyester. Each shirt comes with side seams 
+  to stay new longterm, shoulder tapes that prevent stretching 
+  and a ribbed knit collar <span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple13.getBoundingClientRect();  
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Small_Tshirt.webp", top=circleCenterX, left=circleCenterY);
 });
 
 ripple13.addEventListener("click", function() {
-  productname.textContent = "Von Vene T-Shirt";
-  productprice.textContent = "$Unknown";
-  productdetails.innerHTML = `Description Not Available`;
+  productname.textContent = "Von Vene Unisex Tee";
+  productprice.textContent = "$29.99";
+  productdetails.innerHTML = `Comfort of cotton and durability of polyester. Each shirt comes with side seams 
+  to stay new longterm, shoulder tapes that prevent stretching 
+  and a ribbed knit collar <span onclick = "openProductPage()">...know more</span>`;
 
   const circleRect = ripple13.getBoundingClientRect();
   const circleCenterX = circleRect.left + circleRect.width / 2;
   const circleCenterY = circleRect.top + circleRect.height / 2;
-  setproductposition();
   showproduct(imgsrc= "./img/Product_Images/Small_Tshirt.webp", top=circleCenterX, left=circleCenterY);
 });
 

@@ -172,12 +172,6 @@ nav{
   display: none;
 }
 
-@media (max-aspect-ratio: 4/3){
-  nav{
-    display: none;
-  }
-}
-
 /*---------------------------------------- Hamburger for Mobile View -----------------------------------------*/
 
 .hamburgercontainer{
@@ -506,6 +500,12 @@ nav{
   cursor:text;
   user-select: text;
  }
+
+ .productdetails span{
+  color: rgb(31, 76, 226);
+  cursor: pointer;
+  user-select: none;
+ }
   
  .shippingcontainer{
   position: absolute;
@@ -647,8 +647,8 @@ nav{
   position: absolute;
   display: flex;
   flex-direction: row;
-  left: 15%;
-  top: 75%;
+  left: 27%;
+  top: 35%;
   border: none;
   background: none;
   z-index: 2;
@@ -736,7 +736,13 @@ nav{
 }
 
 
-@media (max-aspect-ratio: 16/9){
+@media (min-aspect-ratio: 16/9.001){
+  #backgroundimage{
+    background-image: url("./img/Room_Images/Lounge/169.webp");
+  }
+}
+
+@media (max-aspect-ratio: 16/9.001){
   #backgroundimage{
     background-image: url("./img/Room_Images/Lounge/1610.webp");
   }
@@ -816,26 +822,23 @@ nav{
    
 }
 
-@media (max-aspect-ratio: 4/3){
+@media (max-aspect-ratio: 4/3.001){
   #backgroundimage{
     background-image: url("./img/Room_Images/Lounge/43.webp");
+  }
+  nav{
+    display: none;
+  }
+  .hamburgercontainer{
+    display: block;
   }
   
 }
 
-@media (max-aspect-ratio: 1){
+@media (max-aspect-ratio: 1/1.001){
   #backgroundimage{
     background-image: url("./img/Room_Images/Lounge/11.webp");
-  }
-}
-
-@media (max-aspect-ratio: 3/4){
-  #backgroundimage{
-    background-image: url("./img/Room_Images/Lounge/34.webp");
     background-position: bottom;
-  }
-  .hamburgercontainer{
-    display: block;
   }
   .productpagecontainer{
     position: fixed;
@@ -845,62 +848,59 @@ nav{
     display: inline-block;
     text-align: center;
   }
+  .hamburger{
+    width: 7vw;
+  }
   #productimage{
-    height: 55vh;
+    height: 50vh;
     width: auto;
-    max-width: 90vw;
+    max-width: 85vw;
     display: none;
+  }
+
+  .productname{
+    left: 6.5%;
+    font-size: 3vh;
+    font-size: 3.5vh;
   }
   .textboxcontainer{
     top: 100%;
     left: 0;
     height: 0px;
     width: 0px;
-    
   }
-  
-  .productname{
-    left: 6.5%;
-    font-size: 3vh;
-  }
-
   #close{
-    width: 6vw;
+    width: 4.75vw;
   }
   .productprice{
-    top: 15%;
+    top: 12.5%;
     left: 6.5%;
     font-size: 2.5vh;
   }
-
   .productdetails{
-    top: 25%;
+    top: 20%;
     left: 6.5%;
-    font-size: 1.8vh;
+    font-size: 1.9vh;
   }
   .shippingcontainer{
-    top: 48%;
+    top: 40%;
     left: 6.5%;
     height: 2vh;
   }
   .shippingcontainer h3{
     font-size: 1.8vh;
   }
-
-  .shippingcontainer img{
-    font-size: 1.6vh;
-  }
   #expand2{
-    top: 53%;
+    top: 44%;
     left: 6.5%;
    }
 
    #expand3{
-    top: 58%;
+    top: 48%;
     left: 6.5%;
    }
    .productquantitycontainer{
-    top: 70%;
+    top: 55%;
     left: 6.5%;
     border: 0.3vh solid rgb(26, 67, 199);
     width: 34%;
@@ -929,7 +929,7 @@ nav{
     filter: invert(100%);
   }
   .addtocart{
-    top: 70%;
+    top: 55%;
     left: 47%;
     border: 0.3vh solid rgb(26, 67, 199);
     width: 45%;
@@ -937,7 +937,7 @@ nav{
   }
   
   .buynow{
-    top: 83%;
+    top: 65%;
     left: 6.5%;
     background:  rgb(23, 59, 175);
     width: 85%;
@@ -945,7 +945,341 @@ nav{
     cursor: pointer;
   }
 
-    
+  #ripple1{ 
+    /*Kansas*/
+    top: 63vh;
+    left: 7vw;
+  }
+
+  #ripple2{
+    /*Fuente*/
+    left: 27.2vw;
+    top: 71.3vh;
+  }
+  #ripple3{
+    /*Service Page*/
+    left: 80vw;
+    top: 94vh;
+  } 
+  #ripple4{
+    /*Laguna*/
+    left: 33vw;
+    top: 50vh;
+  }
+  #ripple5{
+    /*Shirley*/
+    left: 58vw;
+    top: 50vh;
+  }
+  #ripple6{
+    /*Buds*/
+    left: 35.2vw;
+    top: 72.7vh;
+  }
+
+  #ripple7{
+    /*Bottle*/
+    left: 57.2vw;
+    top: 70.7vh;
+  }
+  #ripple8{
+    /*Mug*/
+    left: 69vw;
+    top: 71.7vh;
+  }
+  #ripple9{
+    /*Blanket*/
+    top: 75vh;
+    left: 95vw;
+  }
+  #ripple10{
+    /*Suitcase*/
+    top: -10vh;
+    left: -10vw;
+  }
+  #ripple11{
+    /*Beach Towel*/
+    top: -10vh;
+    left: -10vw;
+  }
+  #ripple12{
+    /*Yoga Mat*/
+    left: 30vw;
+    top: 96.6vh;
+  }
+  #ripple13{
+    /*T-Shirt*/
+    top: -10vh;
+    left: -10vw;
+  }
+  #ripple14{
+    /*About Us Page*/
+    left: 14vw;
+    top: 34.2vh;
+  }
+  .prevroomcontainer{
+    left: 10%;
+    top: 82%;
+  }
+
+  @keyframes revealtext {
+    from{ width: 0vw;
+       opacity: 0;
+  
+      }
+    to { width: 24vw; opacity: 1;}
+  }
+}
+
+@media (max-aspect-ratio: 3/4.001){
+  #backgroundimage{
+    background-image: url("./img/Room_Images/Lounge/34.webp");
+    background-position: bottom;
+  }
+  .productpagecontainer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50%), (-50%));
+    display: inline-block;
+    text-align: center;
+  }
+  .hamburger{
+    width: 7vw;
+  }
+  #productimage{
+    height: 55vh;
+    width: auto;
+    max-width: 90vw;
+    display: none;
+  }
+
+  .productname{
+    left: 6.5%;
+    font-size: 3vh;
+    font-size: 3.5vh;
+  }
+  .textboxcontainer{
+    top: 100%;
+    left: 0;
+    height: 0px;
+    width: 0px;
+  }
+  #close{
+    width: 4.75vw;
+  }
+  .productprice{
+    top: 12.5%;
+    left: 6.5%;
+    font-size: 2.5vh;
+  }
+  .productdetails{
+    top: 20%;
+    left: 6.5%;
+    font-size: 1.9vh;
+  }
+  .shippingcontainer{
+    top: 40%;
+    left: 6.5%;
+    height: 2vh;
+  }
+  .shippingcontainer h3{
+    font-size: 1.8vh;
+  }
+  #expand2{
+    top: 44%;
+    left: 6.5%;
+   }
+
+   #expand3{
+    top: 48%;
+    left: 6.5%;
+   }
+   .productquantitycontainer{
+    top: 55%;
+    left: 6.5%;
+    border: 0.3vh solid rgb(26, 67, 199);
+    width: 34%;
+   }
+   .minusbutton {
+    width: 5vw;
+    height: 4vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-left: 5%;
+  }
+  .currentquantity{
+    position: relative;
+    top: 0;
+    font-size: 1.8vh;
+    padding: 1vh 1% 1vh 1%;
+    margin: auto;
+    transform: translateX(90%) translateY(-8%);
+  }
+  .plusbutton {
+    width: 5vw;
+    height: 4vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-right: 5%;
+    filter: invert(100%);
+  }
+  .addtocart{
+    top: 55%;
+    left: 47%;
+    border: 0.3vh solid rgb(26, 67, 199);
+    width: 45%;
+    height: 5.5vh;
+  }
+  
+  .buynow{
+    top: 65%;
+    left: 6.5%;
+    background:  rgb(23, 59, 175);
+    width: 85%;
+    height: 5.5vh;
+    cursor: pointer;
+  }
+
+  #ripple1{ 
+    /*Kansas*/
+    top: 63vh;
+    left: 7vw;
+  }
+
+  #ripple2{
+    /*Fuente*/
+    left: 27.2vw;
+    top: 71.3vh;
+  }
+  #ripple3{
+    /*Service Page*/
+    left: 80vw;
+    top: 94vh;
+  } 
+  #ripple4{
+    /*Laguna*/
+    left: 33vw;
+    top: 50vh;
+  }
+  #ripple5{
+    /*Shirley*/
+    left: 58vw;
+    top: 50vh;
+  }
+  #ripple6{
+    /*Buds*/
+    left: 35.2vw;
+    top: 72.7vh;
+  }
+
+  #ripple7{
+    /*Bottle*/
+    left: 57.2vw;
+    top: 70.7vh;
+  }
+  #ripple8{
+    /*Mug*/
+    left: 69vw;
+    top: 71.7vh;
+  }
+  #ripple9{
+    /*Blanket*/
+    top: 75vh;
+    left: 95vw;
+  }
+  #ripple10{
+    /*Suitcase*/
+    top: -10vh;
+    left: -10vw;
+  }
+  #ripple11{
+    /*Beach Towel*/
+    top: -10vh;
+    left: -10vw;
+  }
+  #ripple12{
+    /*Yoga Mat*/
+    left: 30vw;
+    top: 96.6vh;
+  }
+  #ripple13{
+    /*T-Shirt*/
+    top: -10vh;
+    left: -10vw;
+  }
+  #ripple14{
+    /*About Us Page*/
+    left: 14vw;
+    top: 34.2vh;
+  }
+  .prevroomcontainer{
+    left: 10%;
+    top: 82%;
+  }
+
+  @keyframes revealtext {
+    from{ width: 0vw;
+       opacity: 0;
+  
+      }
+    to { width: 24vw; opacity: 1;}
+  }
+}
+
+@media (max-aspect-ratio: 10/16.001){ 
+  /*Mobile Version (Inherits ipad version)*/
+  #backgroundimage{
+    background-image: url("./img/Room_Images/Lounge/34.webp");
+    background-position: bottom;
+  }
+  
+  .productname{
+    font-size: 3vh;
+  }
+
+  #close{
+    width: 6vw;
+  }
+  .productprice{
+    font-size: 2.5vh;
+  }
+
+  .productdetails{
+    font-size: 1.7vh;
+  }
+  .shippingcontainer{
+    top: 48%;
+  }
+
+  .shippingcontainer img{
+    font-size: 1.6vh;
+  }
+  #expand2{
+    top: 53%;
+   }
+
+   #expand3{
+    top: 58%;
+   }
+   .productquantitycontainer{
+    top: 70%;
+   }
+   .minusbutton {
+    width: 5vw;
+    height: 4vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-left: 5%;
+  }
+  .addtocart{
+    top: 70%;
+  }
+  
+  .buynow{
+    top: 83%;
+  }
+
   #ripple1{ 
     /*Kansas*/
     top: -10vh;
@@ -1028,10 +1362,5 @@ nav{
   
       }
     to { width: 31vw; opacity: 1;}
-  }
-}
-@media (min-aspect-ratio: 16/9){
-  #backgroundimage{
-    background-image: url("./img/Room_Images/Lounge/169.webp");
   }
 }
