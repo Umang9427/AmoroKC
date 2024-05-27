@@ -1019,7 +1019,7 @@ nav{
   }
   .prevroomcontainer{
     left: 10%;
-    top: 82%;
+    top: 90%;
   }
 
   @keyframes revealtext {
@@ -1069,34 +1069,34 @@ nav{
     width: 4.75vw;
   }
   .productprice{
-    top: 12.5%;
+    top: 14%;
     left: 6.5%;
     font-size: 2.5vh;
   }
   .productdetails{
-    top: 20%;
+    top: 22.5%;
     left: 6.5%;
-    font-size: 1.9vh;
-  }
-  .shippingcontainer{
-    top: 40%;
-    left: 6.5%;
-    height: 2vh;
-  }
-  .shippingcontainer h3{
     font-size: 1.8vh;
   }
-  #expand2{
+  .shippingcontainer{
     top: 44%;
+    left: 6.5%;
+    height: 2.2vh;
+  }
+  .shippingcontainer h3{
+    font-size: 2vh;
+  }
+  #expand2{
+    top: 48%;
     left: 6.5%;
    }
 
    #expand3{
-    top: 48%;
+    top: 52%;
     left: 6.5%;
    }
    .productquantitycontainer{
-    top: 55%;
+    top: 62%;
     left: 6.5%;
     border: 0.3vh solid rgb(26, 67, 199);
     width: 34%;
@@ -1125,7 +1125,7 @@ nav{
     filter: invert(100%);
   }
   .addtocart{
-    top: 55%;
+    top: 62%;
     left: 47%;
     border: 0.3vh solid rgb(26, 67, 199);
     width: 45%;
@@ -1133,7 +1133,7 @@ nav{
   }
   
   .buynow{
-    top: 65%;
+    top: 75%;
     left: 6.5%;
     background:  rgb(23, 59, 175);
     width: 85%;
