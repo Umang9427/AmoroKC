@@ -151,8 +151,8 @@ function blackBoxposition(width, height){
 
 //function to get actual image dimensions
 function getactualimagedimensions(ratioaspect){
-  const screenWidth = window.innerWidth; // Get screen width in pixels
-  const screenHeight = window.innerHeight; // Get screen Height in pixels
+  const screenWidth = screen.availWidth; // Get screen width in pixels
+  const screenHeight = screen.availHeight; // Get screen Height in pixels
   
   var height;
   var width;
