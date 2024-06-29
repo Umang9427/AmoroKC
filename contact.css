@@ -157,9 +157,9 @@ html, body{
   }
   .contact-form .theme-btn {
     font-family: zenkakulight;
-    font-size: 2.5vh;
+    font-size: 2.2vh;
     font-weight: 700;
-    color: rgb(38, 88, 249);
+    color: rgb(233, 233, 233);
     padding: 1.5% 10%;
     border: 0.15vw solid rgba(31, 76, 226, 1);
     background: rgba(31, 76, 226, 0);
@@ -176,7 +176,7 @@ html, body{
     
   }
   .theme-btn p{
-    transform: translateY(-0.3vh);
+    transform: translateY(-0.2vh);
   }
 
   .contact-form .theme-btn:hover {
@@ -341,7 +341,7 @@ html, body{
     .contactquery{
       left: 10%;
       margin-top: 0.5%;
-    
+      font-size: 1.6vh;
     }
     .formcontainer{
       margin-top: 10%;
@@ -367,10 +367,11 @@ html, body{
     .contact-form input[type="text"],
     .contact-form input[type="email"]{
       height: 3.5vh;
-      
+      font-size: 55%;
     }
     
     .contact-form textarea {
+      font-size: 55%;
       height: 16vh;
       padding: 0vh 1.5vw;
     }
@@ -402,6 +403,7 @@ html, body{
       width: 5vw;
     }
     .theme-btn p{
+      font-size: 1.4vh;
       transform: translateY(-0.2vh);
     }
   
