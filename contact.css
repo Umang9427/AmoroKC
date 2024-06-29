@@ -1,0 +1,410 @@
+@font-face {
+    font-family: zenkaku;
+    src: url('./Fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Medium.ttf');
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: zenkakulight;
+    src: url('./Fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Regular.ttf');
+    font-display: swap;
+  }
+
+html, body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.logocontainer{
+    position: fixed;
+    left: 3vw;
+    top: 5vh;
+    z-index: 1;
+}
+.navicon{
+    width: 4vw;
+    height: auto;
+}
+
+.contact-page-section {
+    position: relative;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 60% 40% 1fr;
+    background-color: rgb(20, 20, 20);
+    
+  }
+  
+
+  .contactrightsection{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-family: zenkakulight;
+  }
+  
+  .contactheading{
+    color: rgb(239, 239, 239);
+    position: relative;
+    text-align: left;
+    letter-spacing: 0.05em;
+    font-size: 4vh;
+    left: 12.5%;
+    margin-top: 10%;
+    font-weight: 300;
+  }
+
+  .contactquery{
+    color: rgb(239, 239, 239);
+    position: relative;
+    text-align: left;
+    letter-spacing: 0.05em;
+    font-size: 2vh;
+    left: 12.5%;
+    margin-top: 1%;
+    font-weight: 300;
+  }
+
+  .contactquery a{
+    text-decoration: none;
+    color: rgb(34, 81, 238);
+    cursor: pointer;
+  }
+
+
+  .formcontainer{
+    position: relative;
+    left: 12.5%;
+    max-width: 75%;
+    margin-top: 8%;
+  }
+  
+  
+  .contact-form {
+    position: relative;
+  }
+  
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 6vh;
+    color: #202020;
+    font-size: 80%;
+    line-height: 38px;
+    padding: 1vh 1.5vw;
+    border: 1px solid #a5a5a5;
+    background-color: #bdbdbd;
+    transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+   
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"]{
+    border-top-right-radius: 1% 4%;
+    border-bottom-right-radius: 1% 4%;
+    border-top-left-radius: 1% 4%;
+    border-bottom-left-radius: 1% 4%;
+  }
+  .contact-form textarea{
+
+    width: 100%;
+    border-top-right-radius: 1% 2%;
+    border-bottom-right-radius: 1% 2%;
+    border-top-left-radius: 1% 2%;
+    border-bottom-left-radius: 1% 2%;
+  }
+  
+  .contact-form input[type="text"]:focus,
+  .contact-form input[type="email"]:focus,
+  .contact-form textarea:focus {
+    border-color: rgba(14,14,14);
+  }
+  
+  
+  .contact-form textarea {
+    height: 18vh;
+    resize: none;
+  }
+  .form-group1 {
+    position: relative;
+    margin-right: 2%;
+  }
+  .form-group2 {
+    position: relative;
+    margin-left: 2%;
+  }
+  .form-group1 input::placeholder,
+  .form-group2 input::placeholder,
+  .contact-form textarea::placeholder{
+    
+    color: rgb(22, 22, 22);
+    font-family: zenkakulight;
+  }
+  .columngrid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50% 1fr;
+    margin-bottom: 1.5vh;
+    position: relative;
+  }
+  .contact-form .theme-btn {
+    font-family: zenkakulight;
+    font-size: 2.5vh;
+    font-weight: 700;
+    color: rgb(38, 88, 249);
+    padding: 1.5% 10%;
+    border: 0.15vw solid rgba(31, 76, 226, 1);
+    background: rgba(31, 76, 226, 0);
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border-top-right-radius: 1% 2.4%;
+    border-bottom-right-radius: 1% 2.4%;
+    border-top-left-radius: 1% 2.4%;
+    border-bottom-left-radius: 1% 2.4%;
+    margin-top: 3%;
+    left: 1%;
+    letter-spacing: 0.02em;
+    
+  }
+  .theme-btn p{
+    transform: translateY(-0.3vh);
+  }
+
+  .contact-form .theme-btn:hover {
+    color: rgba(235,235,235);
+    border-color: rgba(31, 76, 226, 0);
+    background: rgba(31, 76, 226, 1);
+  }
+  .contact-form input.error,
+  .contact-form select.error,
+  .contact-form textarea.error {
+    border-color: red !important;
+  }
+  .contact-form label.error {
+    display: block;
+    line-height: 24px;
+    padding: 5px 0 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: red;
+    font-weight: 500;
+  }
+  
+  .form-checker{
+    display: none;
+  }
+  
+  
+  .credentialgrid{
+    display: grid;
+    position: relative;
+    margin-top: 5%;
+    left: 15%;
+    grid-template-columns: 50% 50% 1fr;
+    width: 60%;
+   
+  }
+  .credentialheading{
+    position: relative;
+    text-align: left;
+    color: rgb(148, 148, 148);
+    font-family: bevietnamdefault;
+    font-size: 2vh;
+    
+  }
+  .credentialcontent{
+    position: relative;
+    text-align: left;
+    color: rgb(230, 230, 230);
+    margin-top: 1%;
+    font-family: bevietnamlight;
+    font-size: 2vh;
+    
+  }
+  
+  
+  
+
+
+
+
+
+  .line-container {
+    display: flex; /* Arrange elements horizontally */
+    align-items: center; /* Vertically center content */
+    margin-left: 12.5%;
+    width: 75%;
+    margin-top: 6vh;
+  }
+  
+  .line,
+  .or {
+    display: inline-block; /* Allow inline styling with block behavior */
+    margin: 0.2vw; /* Adjust spacing as needed */
+  }
+  
+  .line {
+    width: 50%; /* Adjust line width */
+    height: 0.15vh; /* Adjust line height */
+    background-color: #5f5f5f; /* Optional line color */
+    
+  }
+  
+  .or {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    color: rgb(235, 235, 235);
+    font-weight: 400;
+    font-family: zenkaku;
+    letter-spacing: 0.1em;
+    transform: translateY(-0.3vh);
+  }
+
+  .contactbottomsection{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 2vh;
+    left: 12.5%;
+  }
+
+  .socialplatforms{
+    font-family: zenkakulight;
+    font-weight: 500;
+    font-size: 3vh;
+    color: rgb(34, 81, 238);
+  }
+
+
+  .socialiconrow{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+    width: 30%; /* Adjust width as needed */
+    margin-top: 2vh;
+  }
+  .socialiconrow a{
+    text-decoration: none;
+    width: 1.5vw;
+  }
+
+  .socialiconrow img{
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%) brightness(3);  /* I have downloaded the icons in blue color theme of von vene*/
+  }
+
+  .socialiconrow a span{
+    position: absolute;
+    font-family: zenkakulight;
+    font-weight: 400;
+    font-size: 1.75vh;
+    color: rgb(230,230,230);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    transform: translateY(3vh) translateX(-2.3vw);
+  }
+
+  .socialiconrow a:hover{
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+  }
+  .socialiconrow a:hover span{
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .socialiconrow a:hover img{
+    filter: grayscale(0%) brightness(1);
+    transition: all 0.2s ease-in-out;
+  }
+
+  @media (max-width:1000px) {
+    .contact-page-section{
+      grid-template-columns: 0% 100% 1fr;
+    }
+    .contactheading{
+      margin-top: 15%;
+      left: 10%;
+    }
+    .contactquery{
+      left: 10%;
+      margin-top: 0.5%;
+    
+    }
+    .formcontainer{
+      margin-top: 10%;
+      max-width: 75%;
+      left: 10%;
+    }
+    .columngrid{
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group1{
+      margin-right: 0%;
+      margin-bottom: 1.5vh;
+    }
+    .form-group2{
+      margin-left: 0%;
+    }
+    
+    .credentialgrid{
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"]{
+      height: 3.5vh;
+      
+    }
+    
+    .contact-form textarea {
+      height: 16vh;
+      padding: 0vh 1.5vw;
+    }
+
+    .contact-form .theme-btn{
+      margin-top: 8%;
+      font-size: 2vh;
+    }
+
+    .line-container {
+     
+      margin-left: 10%;
+      width: 75%;
+      margin-top: 8%;
+    }
+    .line {
+      width: 34vw;
+    }
+    .or{
+      width: 7vw;
+    }
+    .socialplatforms{
+      font-size: 2vh;
+    }
+    .socialiconrow{
+      width: 40%;
+    }
+    .socialiconrow a{
+      width: 5vw;
+    }
+    .theme-btn p{
+      transform: translateY(-0.2vh);
+    }
+  
+  }
+  
+  
