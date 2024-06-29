@@ -135,15 +135,17 @@ nav{
     transform: translateX(0.7vh) translateY(0.7vh);
 }
 
-.navelement .shopbutton .icon3{
-    position: absolute;
-    margin: auto;
-    filter: invert(95%);
-    height: 2.6vh;
-    transform: translateX(0.65vh) translateY(0.7vh);
-}
+
 
 .navelement:nth-child(4){
+  position: absolute;
+  display: inherit;
+  
+  margin-left: 34.5vw;
+
+}
+
+.navelement:nth-child(5){
   position: absolute;
   display: inherit;
   
@@ -159,6 +161,32 @@ nav{
   height: 2.5vh;
   transform: translateX(-0.6vh) translateY(0.85vh);
 }
+.navelement .loginbutton .icon6{
+  position: absolute;
+  margin: auto;
+  right: 0%;
+  height: 3vh;
+  transform: translateX(-0.5vh) translateY(0.5vh);
+}
+
+.shopbutton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  margin-left: 1.5vw;
+}
+
+.shopbutton h3{
+  
+  font-family: zenkakulight;
+  font-weight: 400;
+  font-size: 2vh;
+  color: white;
+  transform: translateY(-0.27vh);
+}
+
 .navelement .cartbutton .cartquantity{
   position: absolute;
   top: 0;
@@ -247,7 +275,7 @@ nav{
     display: block;
     display: flex; /* Arranges elements horizontally */
     align-items: center; /* Vertically aligns elements */
-    margin: 1.1vh 6vw;
+    margin: 1.1vh 1vw;
   }
   
   #search-input {
