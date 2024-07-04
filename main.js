@@ -573,6 +573,13 @@ ripple13.addEventListener("click", function() {
 
 
 
+/*------------------------ About Page ------------------------------- */
+
+ripple14.addEventListener("click", function() {
+  window.location = "./aboutus.html";
+});
+
+
 // ----------------------------------------------------------- End ---------------------------------------------------------------------
 
 

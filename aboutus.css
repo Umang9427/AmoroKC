@@ -1,0 +1,472 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  @font-face {
+    font-family: zenkaku;
+    src: url('./Fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Medium.ttf');
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: zenkakulight;
+    src: url('./Fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Regular.ttf');
+    font-display: swap;
+  }
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth !important;
+    text-decoration: none !important;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+    font-display: swap;
+    image-rendering: optimizeSpeed;
+    shape-rendering: geometricPrecision;  
+}
+
+nav{
+    display: inline-block;
+
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: rgba(30,30,30);
+}
+
+.searchproducts{
+    position: absolute;
+    max-height: 8vh;
+    top: 0;
+    left: 0;
+}
+
+.searchcontainer {
+    display: flex; /* Arranges elements horizontally */
+    align-items: center; /* Vertically aligns elements */
+    margin-top: 2.5vh;
+    margin-left: 3.5vw;
+  }
+
+#searchinput {
+    position: absolute;
+    height: 4.5vh;
+    width: 15vw;
+    border: 0.06vh solid rgb(54, 54, 54);
+    background-color: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-top-left-radius: 6% 50%;
+    border-top-right-radius: 6% 50%;
+    border-bottom-left-radius: 6% 50%;
+    border-bottom-right-radius: 6% 50%;
+    flex: 1; /* Flex element to fill available space */
+    text-indent: 2.5vw; /*margin-left for placeholder and input text */
+    outline: none; /*Remove the border after clicking the search bar*/
+    font-family: zenkaku;
+    font-weight: 300;
+  }
+
+  
+  #searchinput::placeholder {
+    left: 0;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 1.8vh;
+    transform: translateY(-0.15vh);
+  }
+
+  .searchproducts .searchcontainer .searchicon{
+    position: relative;
+    height: 2.6vh;
+    transform: translateX(0.9vw) translateY(0.1vh);
+    z-index: 1;
+  }
+
+  .vonvenelogo{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 47.5%;
+    width: auto;
+    height: inherit;
+    text-align: center;
+    filter: brightness(0%) invert(100%);
+    background-color: none;
+    transform: scale(1.2) translateY(0vh);
+    cursor: pointer;
+}
+
+.navpages{
+    position: relative;
+    display: block;
+    top: 0;
+    float: right;
+    text-decoration: none;
+    font-size: 2vh;
+    letter-spacing: 0.01em;
+    top: 2.25vh;
+    right: 4vw;
+}
+.navpages a{
+  color: rgba(250,250,250);
+  text-decoration: none;
+  margin: 1vw;
+  font-family: zenkaku;
+  font-weight: 300;
+}
+
+.navproducts:hover, .navcontact:hover, .navservice:hover {
+  border-bottom: 0.3vh solid rgba(230,230,230); /* Adjust thickness and color */
+  padding-bottom: 0.15vh;
+  
+}
+
+.navabout{
+  border-bottom: 0.3vh solid rgba(230,230,230); /* Adjust thickness and color */
+  padding-bottom: 0.15vh;
+}
+
+
+
+.aboutcompanycontainer{
+  position: absolute;
+  display: block;
+  top: 8vh;
+  background-color: rgba(30,30,30);
+  width: 100%;
+  left: 0;
+  overflow-x: hidden;
+}
+
+.aboutheading{
+  font-family: zenkaku;
+  font-weight: 200;
+  position: relative;
+  font-size: 6vh;
+  color: rgba(245,245,245);
+  text-transform: uppercase;
+  max-width: 35vw;
+  margin: auto;
+  margin-top: 13vh;
+  text-align: center;
+}
+
+.aboutsubheading{
+  font-family: zenkaku;
+  font-weight: 300;
+  position: relative;
+  font-size: 2.25vh;
+  color: rgba(180,180,180);
+  text-transform: uppercase;
+  max-width: 30vw;
+  margin: auto;
+  margin-top: 2.5vh;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.addressgrid{
+  position: relative;
+  width: 90%;
+  height: 65vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr; 
+  grid-column-gap: 2vw;
+  margin-top: 22vh;
+  margin-left: 4vw;
+}
+.firstgrid, .secondgrid, .thirdgrid{
+  position: relative;
+  height: 55vh;
+}
+
+.firstgrid{
+  justify-self: center;
+}
+.secondgrid{
+  justify-self: flex-start;
+}
+.thirdgrid{
+  justify-self: flex-start;
+}
+
+.storeheading{
+  font-family: zenkaku;
+  font-weight: 300;
+  position: relative;
+  font-size: 4vh;
+  color: rgba(230,230,230);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  left: 1vw;
+  margin-top: 2%;
+}
+
+.storesubheading{
+  font-family: zenkaku;
+  font-weight: 300;
+  position: relative;
+  font-size: 2.35vh;
+  color: rgba(180,180,180);
+  letter-spacing: 0.05em;
+  left: 1vw;
+}
+
+.vvbranches{
+  font-family: zenkaku;
+  font-weight: 300;
+  position: relative;
+  font-size: 2.35vh;
+  color: rgba(180,180,180);
+  letter-spacing: 0.05em;
+  left: 1vw;
+  margin-top: 3.5vh;
+  line-height: 4.5vh;
+}
+
+.featuredsection{
+  position: relative;
+  width: 90%;
+  height: 55vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr; 
+  grid-column-gap: 2vw;
+  margin-top: 8vh;
+  margin-left: 4vw;
+}
+
+.firstgridd img{
+  margin-top: 3vh;
+  margin-left: 5%;
+}
+
+.newssectioncontainer{
+  position: relative;
+  width: 100%;
+}
+
+.newsheading{
+  font-family: zenkaku;
+  font-weight: 300;
+  position: relative;
+  font-size: 4vh;
+  color: rgba(230,230,230);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  left: 1vw;
+  margin-top: 1vh;
+}
+
+.newssubheading{
+  font-family: zenkaku;
+  font-weight: 300;
+  position: relative;
+  font-size: 2.35vh;
+  color: rgba(180,180,180);
+  letter-spacing: 0.05em;
+  left: 1vw;
+  text-align: center;
+  margin-top: 15vh;
+}
+
+.newssection{
+  position: relative;
+  width: 90%;
+  height: 55vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-column-gap: 2vw;
+  margin-top: 10vh;
+  margin-left: 4vw;
+}
+
+.bookclub{
+  align-self: center;
+  filter: invert(100%);
+}
+
+.newssection2{
+  position: relative;
+  width: 90%;
+  height: 55vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-column-gap: 2vw;
+  margin-top: 5vh;
+  margin-left: 4vw;
+}
+
+.newssection2 img{
+  max-width: 100%;
+  max-height: 45vh;
+  
+}
+
+.newssection2 img:nth-child(1){
+  aspect-ratio: 9/16;
+}
+
+footer{
+  position: relative;
+  margin-top: 5vh;
+  width: 100%;
+}
+.footerline{
+  content: "";
+  position: relative;
+  width: 100%;
+  border: 0.1vh solid rgb(150,150,150);
+}
+.footergridcontainer{
+  margin-top: 5vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 5vw;
+}
+.footergridcontainer h2{
+  font-family: zenkaku;
+  font-size: 2vh;
+  font-weight: 600;
+  color: rgba(245,245,245);
+  letter-spacing: 0.05em;
+}
+
+.linkscontainer{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vh;
+}
+.linkscontainer a{
+  color: rgba(180,180,180);
+  font-family: zenkaku;
+  font-weight: 400;
+  font-size: 2vh;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 4vh;
+  cursor: pointer;
+}
+.footercopyright p{
+  color: rgba(180,180,180);
+  font-family: zenkaku;
+  font-weight: 400;
+  font-size: 2vh;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.footercopyright{
+  margin-top: 8vh;
+  margin-left: 5vw;
+  margin-bottom: 2vh;
+}
+
+@media (max-width: 900px) {
+  .navpages{
+    display: none;
+  }
+  .searchproducts{
+    display: none;
+  }
+  .aboutheading{
+    font-size: 5vh;
+    max-width: 75vw;
+    margin: auto;
+    margin-top: 6vh;
+  }
+  
+  .aboutsubheading{
+    font-size: 2vh;
+    color: rgba(180,180,180);
+    max-width: 75vw;
+    margin: auto;
+    margin-top: 2.5vh;
+  }
+
+  .vonvenelogo{
+    position: absolute;
+    display: flex;
+    top: 0;
+    justify-content: center;
+    transform: scale(1.2) translateY(0vh) translateX(-4vw);
+  }
+  .firstgrid{
+    display: none;
+  }
+  .addressgrid{
+    position: relative;
+    width: 90%;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr; 
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vh;
+    margin-top: 12vh;
+    margin-left: 4vw;
+  }
+  .firstgrid, .secondgrid, .thirdgrid{
+    position: relative;
+    height: 53vh;
+    width: 90%;
+  }
+  .storeheading{
+    font-size: 3.5vh;
+  }
+  .storesubheading{
+    font-size: 2vh;
+  }
+  .thirdgridd{
+    display: none;
+  }
+  .featuredsection{
+    height: 80vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 2vh;
+    margin-top: 12vh;
+    margin-left: 4vw;
+  }
+
+  .newssection{
+    height: 40vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; 
+    grid-column-gap: 2vw;
+    grid-row-gap: 1vh;
+    margin-top: 8vh;
+    margin-left: 4vw;
+  }
+  .newssection2{
+    height: 65vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; 
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vh;
+    margin-top: 5vh;
+    margin-left: 4vw;
+  }
+  .footergridcontainer{
+    margin-top: 5vh;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 5vw;
+    grid-row-gap: 2vh;
+    margin-left: 5vw;
+  }
+  .footercopyright{
+    margin-top: 1vh;
+    max-width: 90%;
+  }
+  
+}
