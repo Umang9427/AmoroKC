@@ -33,7 +33,7 @@ body {
     text-decoration: none !important;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizelegibility;
+    text-rendering: geometricPrecision;
     font-display: swap;
     image-rendering: optimizeSpeed;
     shape-rendering: geometricPrecision;  
