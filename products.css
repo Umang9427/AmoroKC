@@ -345,4 +345,12 @@ body {
   height: 2vh;
   justify-content: right;
  } 
+ .allproductscontainer{
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vh;
+  
+}
+
 }
