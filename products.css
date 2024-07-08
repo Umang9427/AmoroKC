@@ -1,0 +1,348 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  @font-face {
+    font-family: zenkaku;
+    src: url('./Fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Medium.ttf');
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: zenkakulight;
+    src: url('./Fonts/Zen_Kaku_Gothic_Antique/ZenKakuGothicAntique-Regular.ttf');
+    font-display: swap;
+  }
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth !important;
+    text-decoration: none !important;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+    font-display: swap;
+    image-rendering: optimizeSpeed;
+    shape-rendering: geometricPrecision;  
+}
+
+.productsection{
+  position: absolute;
+  top: 8vh;
+  width: 100%;
+  background-color: rgb(30,30,30);
+}
+
+.sortcontainer{
+  display: flex;
+  flex-direction: column;
+  float: right;
+  width: 12vw;
+  margin-top: 15vh;
+  margin-right: 4vw;
+}
+.sortbutton{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 3vh;
+  justify-content: right;
+  cursor: pointer;
+ }
+ 
+.sortbutton p {
+  position: relative;
+  font-family: zenkaku;
+  color: white;
+  font-size: 2.5vh;
+  font-weight: 400;
+}
+.sortbutton img{
+  position: relative;
+  display: flex;
+  filter: invert(100%);
+  height: 100%;
+  margin-top: 0.5vh;
+}
+.dropdownlist{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  z-index: 1;
+  margin-top: 4vh;
+  padding: 0vw;
+  width: 12vw;
+  
+  
+  background-color: rgb(30,30,30);
+  border-radius: 0.4rem;
+  overflow: hidden;
+  transition: height 0.2s ease-in-out;
+}
+.dropdownlist a{
+  height: 5vh;
+  z-index: 1;
+  text-decoration: none;
+  color: rgba(230,230,230);
+  font-family: zenkaku;
+  cursor: pointer;
+}
+/* ------------------------------------------------ Product List Section -----------------------------------------------------*/
+
+.allproductscontainer{
+  position: relative;
+  display: grid;
+  width: 90%;
+  margin: 22.5vh auto 0 auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vh;
+
+}
+
+.productcard{
+  height: 65vh;
+  width: 100%;
+}
+.productcard img{
+  position: relative;
+  display: block;
+  height: 45vh;
+  aspect-ratio: 1/1;
+}
+.productname{
+  position: relative;
+  font-family: zenkaku;
+  font-weight: 300;
+  font-size: 2.5vh;
+  color: white;
+  top: 1vh;
+  left: 0vw;
+}
+.starratingscontainer{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 4vh;
+  top: 1vh;
+  left: 0;
+}
+
+.starratingscontainer h5{
+  position: relative;
+  font-size: 2vh;
+  color: rgb(34, 81, 238);
+  font-family: zenkakulight;
+  font-weight: 400;
+  left: 0.5vw;
+  letter-spacing: 0.1em;
+}
+
+.starouter{
+  position: relative;
+ display: inline-block;
+}
+
+.starouter::before{
+  content: "\2605 \2605 \2605 \2605 \2605";
+  color: rgb(150,150,150);
+}
+.starinner{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  overflow: hidden;
+}
+.starinner::before{
+  content: "\2605 \2605 \2605 \2605 \2605";
+  color: rgb(34, 81, 238);
+}
+
+.pricingrowcontainer{
+  position: relative;
+  top: 2vh;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  height: 2vh;
+}
+.pricingrowcontainer h5{
+  position: relative;
+  font-family: sans-serif;
+  font-weight: 400;
+  color: rgb(255,255,255);
+  font-size: 2.5vh;
+  letter-spacing: 0.02em;
+ 
+}
+.pricingrowcontainer .originalpricecontainer{
+  position: relative;
+  display: block;
+  font-family: sans-serif;
+  font-weight: 200;
+  color: rgb(220,220,220);
+  font-size: 2vh;
+  letter-spacing: 0.02em;
+  left: 0.25vw;
+  margin-top: 0.5vh;
+}
+
+.pricingrowcontainer .originalpricecontainer::before {
+  content: ""; /* Empty content to avoid adding extra text */
+  position: absolute; /* Position the line on top of the text */
+  top: 100%; /* Center the line vertically */
+  left: 0; /* Start the line from the left edge */
+  width: 100%; /* Span the entire width of the text */
+  height: 0.05vh; /* Set the thickness of the line */
+  background-color: rgb(220,220,220); /* Color of the line */
+  transform: translateY(50%); /* Offset the line slightly upwards for better alignment */
+  /* Optional: Add a dash line style for a dashed strikethrough */
+  /* border: dashed 1px red; */
+}
+
+.pricingrowcontainer .discountpercentage{
+  position: relative;
+  display: block;
+  font-family: zenkakulight;
+  font-weight: 400;
+  color: rgb(34, 81, 238);
+  font-size: 2vh;
+  letter-spacing: 0.02em;
+  left: 1vw;
+  margin-top: 0.1vh;
+}
+
+.pricingcardmiddlerow{
+  position: relative;
+  top: 0vh;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.pricingcardmiddlerow p{
+  position: relative;
+  font-family: zenkakulight;
+  font-weight: 400;
+  color: rgb(230,230,230);
+  font-size: 2vh;
+  letter-spacing: 0.02em;
+
+}
+
+/* -------------------- Ratings data for individual products -----------------*/
+#kansas-star{
+  width: 85%;
+}
+#kansas-num::before{
+  content: "(11)";
+}
+#fuente-star{
+  width: 92%;
+}
+#fuente-num::before{
+  content: "(15)";
+}
+#laguna-star{
+  width: 0%;
+}
+#laguna-num::before{
+  content: "(0)";
+}
+#shirley-star{
+  width: 48%;
+}
+#shirley-num::before{
+  content: "(5)";
+}
+#beachtowel-star{
+  width: 100%;
+}
+#beachtowel-num::before{
+  content: "(1)";
+}
+#bigpockettee-star{
+  width: 50%;
+}
+#bigpockettee-num::before{
+  content: "(2)";
+}
+#blanket-star{
+  width: 100%;
+}
+#blanket-num::before{
+  content: "(1)";
+}
+#mug-star{
+  width: 80%;
+}
+#mug-num::before{
+  content: "(29)";
+}
+#smalltshirt-star{
+  width: 90%;
+}
+#smalltshirt-num::before{
+  content: "(23)";
+}
+#suitcase-star{
+  width: 0%;
+}
+#suitcase-num::before{
+  content: "(0)";
+}
+#buds-star{
+  width: 100%;
+}
+#buds-num::before{
+  content: "(18)";
+}
+#waterbottle-star{
+  width: 70%;
+}
+#waterbottle-num::before{
+  content: "(2)";
+}
+#yogamat-star{
+  width: 0%;
+}
+#yogamat-num::before{
+  content: "(0)";
+}
+
+
+
+@media (max-width:1000px) {
+  nav{
+    display: none;
+  }
+  .searchproducts{
+    display: none;
+  }
+  .sortcontainer{
+    width: 20vw;
+  }
+  .sortbutton p{
+    font-size: 2vh;
+  }
+ .dropdownlist{
+  width: 20vw;
+ }
+ .sortcontainer{
+  margin-right: 14vw;
+ }
+ .sortbutton{
+  height: 2vh;
+  justify-content: right;
+ } 
+}

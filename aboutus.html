@@ -18,9 +18,9 @@
   <meta property="og:type" content="website">
   <meta property="og:description" content="Get to know more about vvcandles - your favorite candle store">
   <meta property="og:site_name" content="VVCandles">
-  <!--<meta property="article:publisher" content="https://www.facebook.com/ArchCGI/">
-  <meta property="og:image" content="https://archcgi.com/favicon.ico"> 
-  <meta property="og:image:type" content="image/png"> -->
+  <meta property="article:publisher" content="https://www.instagram.com/trap.candles/">
+  <!--<meta property="og:image" content="https://archcgi.com/favicon.ico">--> 
+  <meta property="og:image:type" content="image/png">
   <link rel="icon" type="image/png" href="./Logo/favicon.ico" media="screen">
   <link rel="shortcut icon" type="image/x-icon" href="./Logo/favicon.ico" />
 
@@ -34,6 +34,7 @@
   <!--   ****************** Linking css and js file **************************-->
   <link rel="preload stylesheet" href="./main.css" media="screen" priority>
   <link rel="preload stylesheet" href="./aboutus.css" media="screen" priority>
+  <link rel="preload stylesheet" href="./nav.css" media="screen" priority>
   
   
   <!-- ************SEO optimization ****************-->
@@ -49,10 +50,10 @@
 
 <body>
 
-<nav>
+<nav id="navigation">
     <form class="searchproducts" id="searchproducts" action="#">  
         <div class="searchcontainer"><!-- Search Bar for Products-->
-          <img class="searchicon" src="./Icons/Search.svg" width="auto" height="auto" alt="Search Bar Icon" loading="eager">
+          <img class="searchicon" id="searchicon" src="./Icons/Search.svg" width="auto" height="auto" alt="Search Bar Icon" loading="eager">
           <input type="text" id="searchinput" placeholder="Search our Products" name="search">
         </div>
       </form>
@@ -171,5 +172,6 @@
 
 
 
+<script type="text/javascript" src="nav.js"></script>
 </body>
 </html>

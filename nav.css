@@ -1,0 +1,191 @@
+#navigation {
+ 
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(30,30,30);
+    opacity: 1;
+    height: 8vh;
+    z-index: 2;
+    
+  }
+  
+  
+  .searchproducts{
+      position: absolute;
+      max-height: 8vh;
+      top: 0;
+      left: 0;
+  }
+  
+  .searchcontainer {
+      display: flex; /* Arranges elements horizontally */
+      align-items: center; /* Vertically aligns elements */
+      margin-top: 2.5vh;
+      margin-left: 3.5vw;
+    }
+  
+  #searchinput {
+      position: absolute;
+      height: 4.5vh;
+      width: 15vw;
+      border: 0.06vh solid rgb(54, 54, 54);
+      background-color: none;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      border-top-left-radius: 6% 50%;
+      border-top-right-radius: 6% 50%;
+      border-bottom-left-radius: 6% 50%;
+      border-bottom-right-radius: 6% 50%;
+      flex: 1; /* Flex element to fill available space */
+      text-indent: 2.5vw; /*margin-left for placeholder and input text */
+      outline: none; /*Remove the border after clicking the search bar*/
+      font-family: zenkaku;
+      font-weight: 300;
+      
+      
+    }
+  
+    
+    #searchinput::placeholder {
+      left: 0;
+      color: rgba(0, 0, 0, 0.9);
+      font-size: 1.8vh;
+      transform: translateY(-0.15vh);
+    }
+  
+    .searchproducts .searchcontainer .searchicon{
+      position: relative;
+      height: 2.6vh;
+      transform: translateX(0.9vw) translateY(0.1vh);
+      z-index: 1;
+    }
+  
+    .vonvenelogo{
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 47.5%;
+      width: auto;
+      height: inherit;
+      text-align: center;
+      filter: brightness(0%) invert(100%);
+      background-color: none;
+      transform: scale(1.2) translateY(0vh);
+      cursor: pointer;
+  }
+  
+  .navpages{
+      position: relative;
+      display: block;
+      top: 0;
+      float: right;
+      text-decoration: none;
+      font-size: 2vh;
+      letter-spacing: 0.01em;
+      top: 2.25vh;
+      right: 4vw;
+  }
+  .navpages a{
+    color: rgba(250,250,250);
+    text-decoration: none;
+    margin: 1vw;
+    font-family: zenkaku;
+    font-weight: 300;
+  }
+  
+  .navproducts:hover, .navcontact:hover, .navservice:hover {
+    border-bottom: 0.3vh solid rgba(230,230,230); /* Adjust thickness and color */
+    padding-bottom: 0.15vh;
+    
+  }
+  
+  .navabout{
+    border-bottom: 0.3vh solid rgba(230,230,230); /* Adjust thickness and color */
+    padding-bottom: 0.15vh;
+  }
+  
+  @media (max-width: 900px) {
+    .navpages{
+      display: none;
+    }
+}  
+
+
+
+
+
+
+
+footer{
+  position: relative;
+  margin-top: 5vh;
+  width: 100%;
+}
+.footerline{
+  content: "";
+  position: relative;
+  width: 100%;
+  border: 0.1vh solid rgb(150,150,150);
+}
+.footergridcontainer{
+  margin-top: 5vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 5vw;
+}
+.footergridcontainer h2{
+  font-family: zenkaku;
+  font-size: 2vh;
+  font-weight: 600;
+  color: rgba(245,245,245);
+  letter-spacing: 0.05em;
+}
+
+.linkscontainer{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2vh;
+}
+.linkscontainer a{
+  color: rgba(180,180,180);
+  font-family: zenkaku;
+  font-weight: 400;
+  font-size: 2vh;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 4vh;
+  cursor: pointer;
+}
+.footercopyright p{
+  color: rgba(180,180,180);
+  font-family: zenkaku;
+  font-weight: 400;
+  font-size: 2vh;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.footercopyright{
+  margin-top: 8vh;
+  margin-left: 5vw;
+  margin-bottom: 2vh;
+}
+
+@media (max-width: 900px) {
+  
+  .footergridcontainer{
+    margin-top: 5vh;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 5vw;
+    grid-row-gap: 2vh;
+    margin-left: 5vw;
+  }
+  .footercopyright{
+    margin-top: 1vh;
+    max-width: 90%;
+  }
+  
+}
