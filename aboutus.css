@@ -215,59 +215,11 @@ body {
   aspect-ratio: 9/16;
 }
 
-footer{
-  position: relative;
-  margin-top: 5vh;
-  width: 100%;
-}
-.footerline{
-  content: "";
-  position: relative;
-  width: 100%;
-  border: 0.1vh solid rgb(150,150,150);
-}
-.footergridcontainer{
-  margin-top: 5vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-left: 5vw;
-}
-.footergridcontainer h2{
-  font-family: zenkaku;
-  font-size: 2vh;
-  font-weight: 600;
-  color: rgba(245,245,245);
-  letter-spacing: 0.05em;
-}
 
-.linkscontainer{
-  display: flex;
-  flex-direction: column;
-  margin-top: 2vh;
-}
-.linkscontainer a{
-  color: rgba(180,180,180);
-  font-family: zenkaku;
-  font-weight: 400;
-  font-size: 2vh;
-  text-transform: uppercase;
-  text-decoration: none;
-  line-height: 4vh;
-  cursor: pointer;
-}
-.footercopyright p{
-  color: rgba(180,180,180);
-  font-family: zenkaku;
-  font-weight: 400;
-  font-size: 2vh;
-  text-transform: uppercase;
-  text-decoration: none;
-}
 
-.footercopyright{
-  margin-top: 8vh;
-  margin-left: 5vw;
-  margin-bottom: 2vh;
+.navabout{
+  border-bottom: 0.3vh solid rgba(230,230,230); /* Adjust thickness and color */
+  padding-bottom: 0.15vh;
 }
 
 @media (max-width: 900px) {
@@ -276,6 +228,9 @@ footer{
   }
   .searchproducts{
     display: none;
+  }
+  .hamburgercontainer{
+    display: block;
   }
   .aboutheading{
     font-size: 5vh;
@@ -356,18 +311,6 @@ footer{
     margin-top: 5vh;
     margin-left: 4vw;
   }
-  .footergridcontainer{
-    margin-top: 5vh;
-
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-column-gap: 5vw;
-    grid-row-gap: 2vh;
-    margin-left: 5vw;
-  }
-  .footercopyright{
-    margin-top: 1vh;
-    max-width: 90%;
-  }
+  
   
 }

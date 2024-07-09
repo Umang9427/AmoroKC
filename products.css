@@ -32,6 +32,14 @@ body {
     shape-rendering: geometricPrecision;  
 }
 
+.navproducts{
+  border-bottom: 0.3vh solid rgba(230,230,230); /* Adjust thickness and color */
+  padding-bottom: 0.15vh;
+}
+.hamburgercontainer{
+  display: none;
+}
+
 .productsection{
   position: absolute;
   top: 8vh;
@@ -74,13 +82,13 @@ body {
   position: absolute;
   display: flex;
   flex-direction: column;
-  height: 20vh;
-  z-index: 1;
-  margin-top: 4vh;
+  float: right;
+  margin-right: 4vw;
+  width: 0vw;
+  height: 0vh;
+  margin-top: 5vh;
   padding: 0vw;
-  width: 12vw;
-  
-  
+  z-index: 1;
   background-color: rgb(30,30,30);
   border-radius: 0.4rem;
   overflow: hidden;
@@ -93,6 +101,7 @@ body {
   color: rgba(230,230,230);
   font-family: zenkaku;
   cursor: pointer;
+  text-align: right;
 }
 /* ------------------------------------------------ Product List Section -----------------------------------------------------*/
 
@@ -110,14 +119,28 @@ body {
 
 .productcard{
   height: 65vh;
-  width: 100%;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.productimgcontainer{
+  height: 45vh;
+  aspect-ratio: 1/1;
+  overflow: hidden;
 }
 .productcard img{
   position: relative;
   display: block;
-  height: 45vh;
-  aspect-ratio: 1/1;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
 }
+.productcard:hover img{
+  overflow: hidden;
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+
 .productname{
   position: relative;
   font-family: zenkaku;
@@ -126,6 +149,7 @@ body {
   color: white;
   top: 1vh;
   left: 0vw;
+  text-decoration: none;
 }
 .starratingscontainer{
   position: relative;
@@ -330,16 +354,14 @@ body {
     display: none;
   }
   .sortcontainer{
-    width: 20vw;
+    width: 40vw;
   }
   .sortbutton p{
     font-size: 2vh;
   }
- .dropdownlist{
-  width: 20vw;
- }
+ 
  .sortcontainer{
-  margin-right: 14vw;
+  margin-right: 8vw;
  }
  .sortbutton{
   height: 2vh;
