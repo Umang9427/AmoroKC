@@ -200,72 +200,7 @@ nav{
   display: none;
 }
 
-/*---------------------------------------- Hamburger for Mobile View -----------------------------------------*/
 
-.hamburgercontainer{
-  display: none;
-}
-
-.hamburger{
-  position: fixed;
-  display: block;
-  
-  z-index: 2;
-  width: 10vw;
-  height: fit-content;
-  top: 3vh;
-  right: 6vw;
-}
-.hamburger img{
-  filter: invert(100%);
-  width: inherit;
-  aspect-ratio: 1;
-}
-.mobilemenu{
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
-    height: 0%;
-    width: 100%;
-    position: fixed; /* Stay in place */
-    z-index: 5; /* Sit on top */
-    left: 0;
-    top: 0;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-}
-.menus{
-  position: relative;
-  display: inline-block;
-  height: 100%;
-  width: 100%; /* 100% width */
-  text-align: center; /* Centered text/links */
-  text-decoration: none;
-}
-
-
-.menus a {
-  padding: 1vw;
-  text-decoration: none;
-  color: #9b9b9b;
-  display: block; /* Display block instead of inline */
-  font-family: zenkaku;
-  font-size: 4vh;
-  transition: 0.3s; /* Transition effects on hover (color) */
-}
-.menus a:nth-child(1){
-  margin-top: 35%;
-}
-
-.mobilemenu #closehamburgericon{
-  position: fixed;
-  filter: invert(50%);
-  top: 3vh;
-  right: 6vw;
-  width: 10vw;
-  aspect-ratio: 1;
-  display: none;
-}
 
 
 /* -------------------------------------- Nav Search Bar ------------------------------------------------*/

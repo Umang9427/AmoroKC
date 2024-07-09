@@ -28,14 +28,13 @@ for (let i = 0; i < originalprices.length; i++){
 var sortclickcount= 0; //global variable
 var sortbutton = document.getElementById("sortbutton");
 var dropdown = document.getElementById("dropdownlist");
-dropdown.style.height = "0%";
-dropdown.style.width = "0%";
 
-sortbutton.addEventListener("click", function(){
+
+function dropdownlist(wide, pad, high){
     if (!sortclickcount){
-        dropdown.style.width = "100%";
-        dropdown.style.padding = "1vw";
-        dropdown.style.height = "20vh";
+        dropdown.style.width = `${wide}vw`;
+        dropdown.style.padding = `${pad}vw`;
+        dropdown.style.height = `${high}vh`;
         sortclickcount = 1;
     }
     else{
@@ -45,4 +44,14 @@ sortbutton.addEventListener("click", function(){
         dropdown.style.height = "0%";
         sortclickcount = 0;
     }
+}
+
+sortbutton.addEventListener("click", function(){
+    // Check for touch support (in mobile devices)
+    const isTouchDevice = 'ontouchstart' in document.documentElement;
+    if (!isTouchDevice) {
+        dropdownlist(12, 1, 20);
+      } else {
+        dropdownlist(40, 3, 17);
+      }
 });

@@ -60,11 +60,25 @@
     <img src="./Logo/featuredlogo.svg" class="vonvenelogo" width="auto" height="auto" loading="eager" alt="von vene logo" onclick="location.href='index.html';">
 
     <div class="navpages">
-        <a class="navabout" href="./aboutus.html">About us</a>
         <a class="navproducts" href="./index.html">Products</a>
+        <a class="navabout" href="./aboutus.html">About us</a>
         <a class="navservice" href="./index.html">Services</a>
         <a class="navcontact" href="./contact.html">Contact</a>
- 
+    </div>
+
+    <div class="hamburgercontainer">
+      <div class="hamburger" onclick="openNav()">
+        <img src="./Icons/hamburger.svg" width="auto" height="auto" loading="eager">
+      </div>
+      <div class="mobilemenu" id="mobilemenu">
+        <div class = "menus">
+          <a href="./index.html" class="aboutmenu">About</a>
+          <a href="./index.html">Services</a>
+          <a href="./index.html">Clients</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+        <img id="closehamburgericon" onclick="closeNav()" src="./Icons/Close.svg" width="auto" height="auto" loading="eager">
+      </div>
     </div>
 </nav>
 
@@ -87,8 +101,10 @@
 
     <!-- Product Card-->
     <div class="productcard kansas">
-      <img src="./img/Product_Images/Square/Kansas.webp" width="auto" height="auto"
-       alt="Product Image: Kansas Scented candle" loading="eager">
+      <div class="productimgcontainer">
+        <img src="./img/Product_Images/Square/Kansas.webp" width="auto" height="auto"
+        alt="Product Image: Kansas Scented candle" loading="eager">
+      </div>
        <h2 class="productname">Kansas Scented Candle</h2>
        
        <div class="starratingscontainer">
@@ -111,8 +127,10 @@
 
   <!-- Product Card-->
   <div class="productcard fuente">
-    <img src="./img/Product_Images/Square/Fuente.webp" width="auto" height="auto"
-    alt="Product Image: Fuente Scented candle" loading="eager">
+    <div class="productimgcontainer">
+      <img src="./img/Product_Images/Square/Fuente.webp" width="auto" height="auto"
+      alt="Product Image: Fuente Scented candle" loading="eager">
+    </div>
     <h2 class="productname">Fuente Scented Candle</h2>
     
     <div class="starratingscontainer">
@@ -135,8 +153,10 @@
 
    <!-- Product Card-->
    <div class="productcard laguna">
-    <img src="./img/Product_Images/Square/Laguna.webp" width="auto" height="auto"
-    alt="Product Image: Laguna Scented candle" loading="eager">
+    <div class="productimgcontainer">
+      <img src="./img/Product_Images/Square/Laguna.webp" width="auto" height="auto"
+      alt="Product Image: Laguna Scented candle" loading="eager">
+    </div>
     <h2 class="productname">Laguna Scented Candle</h2>
     
     <div class="starratingscontainer">
@@ -159,8 +179,10 @@
 
   <!-- Product Card-->
   <div class="productcard Shirley">
-    <img src="./img/Product_Images/Square/Shirley.webp" width="auto" height="auto"
-    alt="Product Image: Shirley Scented candle" loading="eager">
+    <div class="productimgcontainer">
+      <img src="./img/Product_Images/Square/Shirley.webp" width="auto" height="auto"
+      alt="Product Image: Shirley Scented candle" loading="eager">
+    </div>
     <h2 class="productname">Shirley Scented Candle</h2>
     
     <div class="starratingscontainer">
@@ -183,8 +205,10 @@
 
    <!-- Product Card-->
    <div class="productcard beachtowel">
-    <img src="./img/Product_Images/Beach_towel.webp" width="auto" height="auto"
-    alt="Product Image: Beach Towel" loading="eager">
+    <div class="productimgcontainer">
+      <img src="./img/Product_Images/Beach_towel.webp" width="auto" height="auto"
+      alt="Product Image: Beach Towel" loading="eager">
+    </div>
     <h2 class="productname">Beach Towel</h2>
     
     <div class="starratingscontainer">
@@ -207,8 +231,10 @@
 
   <!-- Product Card-->
   <div class="productcard bigpockettee">
-    <img src="./img/Product_Images/Big_Pocket_TShirt.webp" width="auto" height="auto"
-    alt="Product Image: Big Pocket TShirt" loading="eager">
+    <div class="productimgcontainer">
+      <img src="./img/Product_Images/Big_Pocket_TShirt.webp" width="auto" height="auto"
+      alt="Product Image: Big Pocket TShirt" loading="eager">
+    </div>
     <h2 class="productname">Big Pocket Tshirt</h2>
     
     <div class="starratingscontainer">
@@ -231,8 +257,10 @@
 
    <!-- Product Card-->
    <div class="productcard blanket">
-    <img src="./img/Product_Images/Blanket.webp" width="auto" height="auto"
-    alt="Product Image: Blanket" loading="eager">
+    <div class="productimgcontainer">
+      <img src="./img/Product_Images/Blanket.webp" width="auto" height="auto"
+      alt="Product Image: Blanket" loading="eager">
+    </div>
     <h2 class="productname">Sherpa Blanket</h2>
     
     <div class="starratingscontainer">
@@ -255,8 +283,10 @@
 
   <!-- Product Card-->
   <div class="productcard mug">
-    <img src="./img/Product_Images/Mug.webp" width="auto" height="auto"
-    alt="Product Image: Ceramic Mug" loading="eager">
+    <div class="productimgcontainer">
+      <img src="./img/Product_Images/Mug.webp" width="auto" height="auto"
+      alt="Product Image: Ceramic Mug" loading="eager">
+    </div>
     <h2 class="productname">Ceramic Mug</h2>
     
     <div class="starratingscontainer">
@@ -279,8 +309,10 @@
 
   <!-- Product Card-->
   <div class="productcard smalltshirt">
-    <img src="./img/Product_Images/Small_Tshirt.webp" width="auto" height="auto"
-    alt="Product Image: Small Tshirt" loading="eager">
+    <div class="productimgcontainer">
+      <img src="./img/Product_Images/Small_Tshirt.webp" width="auto" height="auto"
+      alt="Product Image: Small Tshirt" loading="eager">
+    </div>
     <h2 class="productname">Small Tshirt</h2>
     
     <div class="starratingscontainer">
@@ -303,8 +335,10 @@
 
   <!-- Product Card-->
   <div class="productcard suitcase">
-    <img src="./img/Product_Images/Suitcase.webp" width="auto" height="auto"
-    alt="Product Image: Travel Suitcase" loading="eager">
+    <div class="productimgcontainer">
+      <img src="./img/Product_Images/Suitcase.webp" width="auto" height="auto"
+      alt="Product Image: Travel Suitcase" loading="eager">
+    </div>
     <h2 class="productname">Travel Suitcase</h2>
     
     <div class="starratingscontainer">
@@ -327,8 +361,10 @@
 
   <!-- Product Card-->
   <div class="productcard buds">
-    <img src="./img/Product_Images/Von Vene Buds.webp" width="auto" height="auto"
-    alt="Product Image: Buds" loading="eager">
+    <div class="productimgcontainer">
+      <img src="./img/Product_Images/Von Vene Buds.webp" width="auto" height="auto"
+      alt="Product Image: Buds" loading="eager">
+    </div>
     <h2 class="productname">Buds</h2>
     
     <div class="starratingscontainer">
@@ -351,8 +387,10 @@
 
   <!-- Product Card-->
   <div class="productcard waterbottle">
-    <img src="./img/Product_Images/WaterBottle.webp" width="auto" height="auto"
-    alt="Product Image: Water Bottle" loading="eager">
+    <div class="productimgcontainer">
+      <img src="./img/Product_Images/WaterBottle.webp" width="auto" height="auto"
+      alt="Product Image: Water Bottle" loading="eager">
+    </div>
     <h2 class="productname">Water Bottle</h2>
     
     <div class="starratingscontainer">
@@ -375,8 +413,10 @@
 
   <!-- Product Card-->
   <div class="productcard yogamat">
-    <img src="./img/Product_Images/yoga_mat.webp" width="auto" height="auto"
-    alt="Product Image: Yoga Mat" loading="eager">
+    <div class="productimgcontainer">
+      <img src="./img/Product_Images/yoga_mat.webp" width="auto" height="auto"
+      alt="Product Image: Yoga Mat" loading="eager">
+    </div>
     <h2 class="productname">Yoga Mattress</h2>
     
     <div class="starratingscontainer">
@@ -441,5 +481,6 @@
 
 
 <script src="./products.js" defer></script>
+<script src="./nav.js" defer></script>
 </body>
 </html>

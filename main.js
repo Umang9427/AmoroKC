@@ -3,18 +3,6 @@ const cartvalue = document.getElementById("cartquantity");
 
 
 
-//---------------------------------- Mobile Navigation Bar --------------------------------------
-function openNav() {
-  document.getElementById("mobilemenu").style.height = "100%";
-  document.getElementById("closehamburgericon").style.display = "block";
-}
-
-function closeNav() {
-  document.getElementById("mobilemenu").style.height = "0%";
-  document.getElementById("closehamburgericon").style.display = "none";
-}
-
-
 //------------------------ Blur the hero Image on hover of navigation bar -----------------------
 
 const loungeimage = document.getElementById("backgroundimage");
